@@ -76,6 +76,10 @@ button{
 
 <input type="number" placeholder="Número da camisa">
 
+<input type="file" id="foto">
+
+<img id="preview" width="250" style="display:none; margin-top:20px; border-radius:15px;">
+
 <button>GERAR PRÉVIA</button>
 
 </div>
@@ -85,6 +89,27 @@ button{
 </div>
 
 </div>
+
+    <script>
+
+const foto = document.getElementById("foto");
+const preview = document.getElementById("preview");
+
+foto.addEventListener("change", function(){
+
+const arquivo = this.files[0];
+
+if(arquivo){
+
+preview.src = URL.createObjectURL(arquivo);
+
+preview.style.display = "block";
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
