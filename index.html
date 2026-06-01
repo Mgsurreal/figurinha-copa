@@ -66,21 +66,38 @@ button{
 
 <h2>Crie sua figurinha estilo Copa do Mundo</h2>
 
-<input type="text" placeholder="Seu nome">
+<input type="text" id="nome" placeholder="Seu nome">
 
-<select>
+<select id="selecao">
 <option>Brasil</option>
 <option>Argentina</option>
 <option>França</option>
 </select>
 
-<input type="number" placeholder="Número da camisa">
+<input type="number" id="numero" placeholder="Número da camisa">
 
 <input type="file" id="foto">
 
-<img id="preview" width="250" style="display:none; margin-top:20px; border-radius:15px;">
+<img id="preview"
+     width="250"
+     style="display:none; margin-top:20px; border-radius:15px;">
 
-<button onclick="gerarPrevia()">GERAR PRÉVIA</button>
+<br><br>
+
+<button onclick="gerarPrevia()">
+GERAR PRÉVIA
+</button>
+
+<br><br>
+
+<canvas id="figurinha"
+        width="350"
+        height="500"
+        style="
+        background:white;
+        border:3px solid gold;
+        border-radius:15px;">
+</canvas>
 
 </div>
 
@@ -107,9 +124,45 @@ foto.addEventListener("change", function(){
 });
 
 function gerarPrevia(){
-    alert("Botão funcionando!");
+
+    const nome = document.getElementById("nome").value;
+    const numero = document.getElementById("numero").value;
+    const selecao = document.getElementById("selecao").value;
+
+    const canvas = document.getElementById("figurinha");
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0,0,350,500);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0,0,350,500);
+
+    ctx.fillStyle = "#FFD700";
+    ctx.fillRect(0,0,350,60);
+
+    ctx.fillStyle = "#000";
+    ctx.font = "bold 24px Arial";
+    ctx.fillText(selecao,20,40);
+
+    const img = new Image();
+
+    img.onload = function(){
+
+        ctx.drawImage(img,25,80,300,250);
+
+        ctx.fillStyle = "#000";
+
+        ctx.font = "bold 28px Arial";
+        ctx.fillText(nome,20,390);
+
+        ctx.font = "bold 40px Arial";
+        ctx.fillText("#"+numero,20,450);
+
+    };
+
+    img.src = preview.src;
+
 }
 
-</script>
-</body>
+</script></body>
 </html>
