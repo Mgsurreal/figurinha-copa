@@ -1,168 +1,290 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Surreal Studio Design</title>
 
 <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family:Arial,sans-serif;
     background:#0D1117;
     color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+header{
     text-align:center;
-    padding:20px;
+    padding:40px 20px;
 }
 
-.container{
-    max-width:700px;
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    color:#c9d1d9;
+    font-size:1.1rem;
+}
+
+.catalogo{
+    max-width:1400px;
     margin:auto;
-}
-
-h1{
-    color:#ffd700;
-}
-
-.box{
-    background:#124d28;
     padding:20px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+
+    background:#161B22;
+
+    border:1px solid #30363D;
+
     border-radius:15px;
+
+    overflow:hidden;
+
+    transition:0.3s;
 }
 
-input,select{
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 20px rgba(255,215,0,0.15);
+
+}
+
+.card img{
+
     width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:none;
+
+    display:block;
+
+    transition:0.3s;
+}
+
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.info{
+
+    padding:15px;
+}
+
+.info h3{
+
+    margin-bottom:10px;
+}
+
+.info p{
+
+    color:#c9d1d9;
+
+    margin-bottom:15px;
+
+    font-size:14px;
+}
+
+.botao{
+
+    display:block;
+
+    text-align:center;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px;
+
     border-radius:8px;
+
+    font-weight:bold;
+
+    transition:0.3s;
 }
 
-button{
-    background:#ffd700;
-    color:black;
-    padding:15px 30px;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-    cursor:pointer;
+.botao:hover{
+
+    background:#1ebe5d;
 }
 
-.whatsapp{
-    margin-top:20px;
-    font-size:24px;
-    color:#25D366;
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#8b949e;
 }
+
+/* CELULAR */
+
+@media(max-width:900px){
+
+.catalogo{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.catalogo{
+
+    grid-template-columns:1fr;
+
+}
+
+header h1{
+
+    font-size:2rem;
+
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<h1>Surreal Studio Design</h1>
+<h1>⚽ Surreal Studio Design</h1>
 
-<div class="box">
+<p>
+Transforme qualquer pessoa ou pet em um craque da Copa 2026
+</p>
 
-<h2>Crie sua figurinha estilo Copa do Mundo</h2>
+</header>
 
-<input type="text" id="nome" placeholder="Seu nome">
+<div class="catalogo">
 
-<select id="selecao">
-<option>Brasil</option>
-<option>Argentina</option>
-<option>França</option>
-</select>
+<!-- MODELO 1 -->
 
-<input type="number" id="numero" placeholder="Número da camisa">
+<div class="card">
 
-<input type="file" id="foto">
+<img src="imagem1.jpg">
 
-<img id="preview"
-     width="250"
-     style="display:none; margin-top:20px; border-radius:15px;">
+<div class="info">
 
-<br><br>
+<h3>Neymar + Criança</h3>
 
-<button onclick="gerarPrevia()">
-GERAR PRÉVIA
-</button>
+<p>Transforme seu filho em um craque ao lado de Neymar.</p>
 
-<br><br>
+<a class="botao"
+href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Neymar + Criança."
+target="_blank">
 
-<canvas id="figurinha"
-        width="350"
-        height="500"
-        style="
-        background:white;
-        border:3px solid gold;
-        border-radius:15px;">
-</canvas>
+QUERO ESSE
 
-</div>
+</a>
 
-<div class="whatsapp">
-📱 WhatsApp: 11 98862-3592
 </div>
 
 </div>
 
-   <script>
+<!-- MODELO 2 -->
 
-const foto = document.getElementById("foto");
-const preview = document.getElementById("preview");
+<div class="card">
 
-foto.addEventListener("change", function(){
+<img src="imagem2.jpg">
 
-    const arquivo = this.files[0];
+<div class="info">
 
-    if(arquivo){
-        preview.src = URL.createObjectURL(arquivo);
-        preview.style.display = "block";
-    }
+<h3>Cristiano Ronaldo + Criança</h3>
 
-});
+<p>Uma lembrança inesquecível para futuros campeões.</p>
 
-function gerarPrevia(){
+<a class="botao"
+href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Cristiano Ronaldo + Criança."
+target="_blank">
 
-    const nome = document.getElementById("nome").value;
-    const numero = document.getElementById("numero").value;
-    const selecao = document.getElementById("selecao").value;
+QUERO ESSE
 
-    const canvas = document.getElementById("figurinha");
-    const ctx = canvas.getContext("2d");
+</a>
 
-    ctx.clearRect(0,0,350,500);
+</div>
 
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0,0,350,500);
+</div>
 
-    ctx.fillStyle = "#FFD700";
-    ctx.fillRect(0,0,350,60);
+<!-- MODELO 3 -->
 
-    ctx.fillStyle = "#000";
-    ctx.font = "bold 24px Arial";
-    ctx.fillText(selecao,20,40);
+<div class="card">
 
-    const img = new Image();
+<img src="imagem3.jpg">
 
-    img.onload = function(){
+<div class="info">
 
-        ctx.drawImage(img,25,80,300,250);
+<h3>Future Legend Brasil</h3>
 
-        ctx.fillStyle = "#000";
+<p>Seu futuro craque vestindo as cores da seleção.</p>
 
-        ctx.font = "bold 28px Arial";
-        ctx.fillText(nome,20,390);
+<a class="botao"
+href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Future Legend Brasil."
+target="_blank">
 
-        ctx.font = "bold 40px Arial";
-        ctx.fillText("#"+numero,20,450);
+QUERO ESSE
 
-    };
+</a>
 
-    img.src = preview.src;
+</div>
 
-}
+</div>
 
-</script></body>
+<!-- MODELO 4 -->
+
+<div class="card">
+
+<img src="imagem4.jpg">
+
+<div class="info">
+
+<h3>Pet Craque</h3>
+
+<p>Seu melhor amigo também merece entrar em campo.</p>
+
+<a class="botao"
+href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Pet Craque."
+target="_blank">
+
+QUERO ESSE
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Surreal Studio Design
+
+</footer>
+
+</body>
 </html>
