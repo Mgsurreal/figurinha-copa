@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies - Surreal Design Studio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0D1117;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.8;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+h2{
+    margin-top:30px;
+    margin-bottom:10px;
+    color:#25D366;
+}
+
+p, li{
+    color:#c9d1d9;
+}
+
+ul{
+    margin-left:20px;
+}
+
+.botao{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 20px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.botao:hover{
+    background:#1ebe5d;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Política de Cookies</h1>
+
+<p>
+Última atualização: Junho de 2026.
+</p>
+
+<p>
+Esta Política de Cookies explica como a Surreal Design Studio utiliza cookies e tecnologias semelhantes para melhorar a experiência dos visitantes.
+</p>
+
+<h2>1. O que são Cookies?</h2>
+
+<p>
+Cookies são pequenos arquivos armazenados em seu dispositivo quando você visita um site. Eles ajudam a melhorar a navegação e a experiência do usuário.
+</p>
+
+<h2>2. Como Utilizamos Cookies</h2>
+
+<p>
+Os cookies podem ser utilizados para:
+</p>
+
+<ul>
+<li>Garantir o funcionamento adequado do site;</li>
+<li>Melhorar a experiência de navegação;</li>
+<li>Analisar estatísticas de acesso;</li>
+<li>Personalizar conteúdos e funcionalidades;</li>
+<li>Exibir anúncios relevantes, quando aplicável.</li>
+</ul>
+
+<h2>3. Cookies de Terceiros</h2>
+
+<p>
+Alguns serviços utilizados pelo site podem instalar seus próprios cookies, incluindo ferramentas de análise, publicidade ou integração com plataformas externas.
+</p>
+
+<h2>4. Gerenciamento de Cookies</h2>
+
+<p>
+Você pode configurar seu navegador para bloquear ou remover cookies a qualquer momento. No entanto, algumas funcionalidades do site poderão não funcionar corretamente.
+</p>
+
+<h2>5. Alterações nesta Política</h2>
+
+<p>
+Esta Política de Cookies poderá ser atualizada periodicamente para refletir alterações legais ou operacionais.
+</p>
+
+<h2>6. Contato</h2>
+
+<p>
+Em caso de dúvidas sobre esta Política de Cookies, entre em contato através dos canais oficiais da Surreal Design Studio.
+</p>
+
+<a href="index.html" class="botao">← Voltar ao Site</a>
+
+</div>
+
+</body>
+</html>
