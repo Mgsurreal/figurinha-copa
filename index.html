@@ -204,7 +204,34 @@ header h1{
 
 </head>
 
+    <script>
+document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+});
+</script>
+
 <body>
+
+    <script>
+document.addEventListener('keydown', function(e){
+
+    if(e.key === 'F12'){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && (
+        e.key === 'u' ||
+        e.key === 'U' ||
+        e.key === 's' ||
+        e.key === 'S' ||
+        e.key === 'c' ||
+        e.key === 'C'
+    )){
+        e.preventDefault();
+    }
+
+});
+</script>
 
 <header>
 
