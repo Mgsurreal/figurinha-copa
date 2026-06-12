@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade - Surreal Design Studio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0D1117;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.8;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+h2{
+    margin-top:30px;
+    margin-bottom:10px;
+    color:#25D366;
+}
+
+p, li{
+    color:#c9d1d9;
+}
+
+ul{
+    margin-left:20px;
+}
+
+.botao{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 20px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.botao:hover{
+    background:#1ebe5d;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Política de Privacidade</h1>
+
+<p>
+Última atualização: Junho de 2026.
+</p>
+
+<p>
+A Surreal Design Studio respeita sua privacidade e se compromete a proteger as informações fornecidas pelos visitantes e clientes deste site.
+</p>
+
+<h2>1. Informações Coletadas</h2>
+
+<p>
+Podemos coletar informações fornecidas voluntariamente através do WhatsApp ou outros meios de contato disponibilizados no site.
+</p>
+
+<ul>
+<li>Nome</li>
+<li>Número de telefone</li>
+<li>Fotografias enviadas para personalização</li>
+<li>Informações relacionadas aos pedidos</li>
+</ul>
+
+<h2>2. Utilização das Informações</h2>
+
+<p>
+As informações coletadas são utilizadas exclusivamente para:
+</p>
+
+<ul>
+<li>Atendimento ao cliente</li>
+<li>Criação de artes personalizadas</li>
+<li>Entrega dos serviços contratados</li>
+<li>Comunicação relacionada aos pedidos</li>
+</ul>
+
+<h2>3. Compartilhamento de Dados</h2>
+
+<p>
+A Surreal Design Studio não vende, aluga ou compartilha dados pessoais com terceiros, exceto quando exigido por lei.
+</p>
+
+<h2>4. Segurança</h2>
+
+<p>
+Adotamos medidas razoáveis para proteger as informações recebidas. No entanto, nenhum sistema é completamente seguro.
+</p>
+
+<h2>5. Links Externos</h2>
+
+<p>
+Este site pode conter links para serviços externos, como o WhatsApp. A utilização desses serviços está sujeita às políticas de privacidade de seus respectivos proprietários.
+</p>
+
+<h2>6. Direitos do Usuário</h2>
+
+<p>
+O usuário poderá solicitar a correção ou remoção de seus dados entrando em contato pelos canais oficiais da Surreal Design Studio.
+</p>
+
+<h2>7. Alterações desta Política</h2>
+
+<p>
+Esta política poderá ser atualizada periodicamente para refletir alterações legais ou operacionais.
+</p>
+
+<h2>8. Contato</h2>
+
+<p>
+Em caso de dúvidas sobre esta Política de Privacidade, entre em contato através do WhatsApp disponibilizado neste site.
+</p>
+
+<a href="index.html" class="botao">← Voltar ao Site</a>
+
+</div>
+
+</body>
+</html>
