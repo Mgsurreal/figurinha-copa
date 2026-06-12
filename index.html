@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Surreal Design Studio</title>
 
 <style>
-    html{
-    scroll-behavior:smooth;
+html{scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    background:#0D1117;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
 }
-</style>
 
-    <style>
+header{
+    text-align:center;
+    padding:60px 20px;
+}
 
-    .menu{
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+header p{
+    max-width:850px;
+    margin:20px auto;
+    color:#c9d1d9;
+    line-height:1.7;
+}
+
+.menu{
     margin-top:25px;
     display:flex;
     justify-content:center;
-    gap:25px;
+    gap:15px;
     flex-wrap:wrap;
 }
 
 .menu a{
-    color:white;
+    color:#fff;
     text-decoration:none;
-    font-weight:bold;
     padding:10px 18px;
     border:1px solid #30363D;
     border-radius:8px;
-    transition:0.3s;
+    transition:.3s;
+    font-weight:bold;
 }
 
 .menu a:hover{
@@ -38,412 +55,231 @@
     border-color:#25D366;
 }
 
-        </style>
-
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+section{
+    margin-top:40px;
 }
 
-body{
-    background:#0D1117;
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-header{
+section h2{
     text-align:center;
-    padding:40px 20px;
+    font-size:2rem;
 }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:10px;
-}
-
-header p{
+section p{
+    text-align:center;
     color:#c9d1d9;
-    font-size:1.1rem;
+    max-width:850px;
+    margin:15px auto 30px;
+}
+
+.separador{
+    width:120px;
+    height:2px;
+    background:#25D366;
+    margin:15px auto 25px;
 }
 
 .catalogo{
     max-width:1400px;
     margin:auto;
     padding:20px;
-
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:25px;
 }
 
 .card{
-
     background:#161B22;
-
     border:1px solid #30363D;
-
     border-radius:15px;
-
     overflow:hidden;
-
-    transition:0.3s;
-}
-    .card img{
-    width:100%;
-    height:auto;
-    display:block;
+    transition:.3s;
 }
 
 .card:hover{
-
     transform:translateY(-8px);
-
-    box-shadow:0 0 20px rgba(255,215,0,0.15);
-
+    box-shadow:0 0 25px rgba(255,215,0,.2);
 }
 
 .card img{
-
     width:100%;
-
     display:block;
-
-    transition:0.3s;
-}
-
-.card:hover img{
-
-    transform:scale(1.05);
-
 }
 
 .info{
-
     padding:15px;
 }
 
 .info h3{
-
     margin-bottom:10px;
 }
 
 .info p{
-
-    color:#c9d1d9;
-
+    text-align:left;
     margin-bottom:15px;
-
     font-size:14px;
 }
 
 .botao{
-
     display:block;
-
     text-align:center;
-
-    background:#25D366;
-
-    color:white;
-
     text-decoration:none;
-
+    background:#25D366;
+    color:#fff;
     padding:12px;
-
     border-radius:8px;
-
     font-weight:bold;
-
-    transition:0.3s;
 }
 
 .botao:hover{
-
     background:#1ebe5d;
 }
 
-footer{
-
-    text-align:center;
-
-    padding:20px;
-
-    color:#8b949e;
-}
-    .footer-menu{
+.footer-menu{
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:15px;
     flex-wrap:wrap;
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 .footer-menu a{
     color:#8b949e;
     text-decoration:none;
-    transition:.3s;
 }
 
 .footer-menu a:hover{
     color:#25D366;
 }
 
-/* CELULAR */
-
-@media(max-width:900px){
-
-.catalogo{
-
-    grid-template-columns:repeat(2,1fr);
-
+footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#8b949e;
 }
 
+@media(max-width:900px){
+.catalogo{
+grid-template-columns:repeat(2,1fr);
+}
 }
 
 @media(max-width:600px){
-
 .catalogo{
-
-    grid-template-columns:1fr;
-
+grid-template-columns:1fr;
 }
 
 header h1{
-
-    font-size:2rem;
-
+font-size:2rem;
 }
-
 }
-
 </style>
-
 </head>
 
-    <script>
-document.addEventListener('contextmenu', function(e){
-    e.preventDefault();
-});
-</script>
-
 <body>
-
-    <script>
-document.addEventListener('keydown', function(e){
-
-    if(e.key === 'F12'){
-        e.preventDefault();
-    }
-
-    if(e.ctrlKey && (
-        e.key === 'u' ||
-        e.key === 'U' ||
-        e.key === 's' ||
-        e.key === 'S' ||
-        e.key === 'c' ||
-        e.key === 'C'
-    )){
-        e.preventDefault();
-    }
-
-});
-</script>
 
 <header>
 
 <h1>Surreal Design Studio</h1>
 
-<p style="max-width:800px;margin:20px auto;color:#c9d1d9;">
-Transformamos fotos em lembranças únicas, presentes emocionantes e artes criativas para crianças, adultos e pets.
+<p>
+Transforme suas fotos em obras únicas, presentes inesquecíveis e lembranças que emocionam para sempre.
+Arte personalizada para crianças, adultos e pets.
 </p>
 
 <nav class="menu">
-    <a href="#copa">⚽ Copa</a>
-    <a href="#superherois">🦸 Super-Heróis</a>
-    <a href="#restauracao">🖼️ Restauração</a>
-    <a href="#arte">🎨 Arte</a>
-    <a href="#mesversario">🎂 Mesversário</a>
-    <a href="#contato">📱 Contato</a>
+<a href="#copa">⚽ Copa</a>
+<a href="#superherois">🦸 Super-Heróis</a>
+<a href="#restauracao">🖼️ Restauração</a>
+<a href="#arte">🎨 Arte</a>
+<a href="#mesversario">🎂 Mesversário</a>
+<a href="#contato">📱 Contato</a>
 </nav>
 
 </header>
 
 <section>
 
-<h2 id="copa" style="text-align:center;margin-top:40px;margin-bottom:10px;">
-⚽ Copa do Mundo
-</h2>
+<h2 id="copa">⚽ Copa do Mundo</h2>
+<div class="separador"></div>
 
-<p style="text-align:center;color:#c9d1d9;margin-bottom:30px;">
-Transforme qualquer pessoa ou pet em um craque da Copa 2026.
-</p>
-    
+<p>Transforme qualquer pessoa ou pet em um craque da Copa.</p>
+
 <div class="catalogo">
 
-<!-- MODELO 1 -->
-
 <div class="card">
-
 <img src="LayoutOriginalPanini.png">
-
 <div class="info">
-
 <h3>Figurinha da Copa</h3>
-
-<p>Transforme seu fiho em um craque da copa do mundo.</p>
-
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional."
-target="_blank">
-
-QUERO ESSE
-
-</a>
-
+<p>Transforme seu filho em um craque da Copa do Mundo.</p>
+<a class="botao" href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional." target="_blank">QUERO ESSE</a>
 </div>
-
 </div>
-
-<!-- MODELO 2 -->
 
 <div class="card">
-
 <img src="FigurinhaPaniniCopaExtra.png">
-
 <div class="info">
-
 <h3>Figurinha da Copa Extra</h3>
-
 <p>Uma lembrança inesquecível para futuros campeões.</p>
-
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Extra."
-target="_blank">
-
-QUERO ESSE
-
-</a>
-
+<a class="botao" href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Extra." target="_blank">QUERO ESSE</a>
 </div>
-
 </div>
-
-<!-- MODELO 3 -->
 
 <div class="card">
-
 <img src="CardNeymar.png">
-
 <div class="info">
-
-<h3>Card Premium Future Legend </h3>
-
-<p>Seu futuro craque vestindo as cores da seleção que ele gosta.</p>
-
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Card Premium Future Legend."
-target="_blank">
-
-QUERO ESSE
-
-</a>
-
+<h3>Card Premium Future Legend</h3>
+<p>Seu futuro craque ao lado de grandes ídolos.</p>
+<a class="botao" href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Card Premium Future Legend." target="_blank">QUERO ESSE</a>
 </div>
-
 </div>
-
-<!-- MODELO 4 -->
 
 <div class="card">
-
 <img src="WorldCup01.png">
-
 <div class="info">
-
 <h3>Pet Craque</h3>
-
 <p>Seu melhor amigo também merece entrar em campo.</p>
-
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Pet Craque."
-target="_blank">
-
-QUERO ESSE
-
-</a>
-
+<a class="botao" href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Pet Craque." target="_blank">QUERO ESSE</a>
+</div>
 </div>
 
 </div>
-
-</div>
-
-</div>
-
 </section>
 
 <section>
-
-<h2 id="superherois" style="text-align:center;margin-top:60px;">
-🦸 Super-Heróis
-</h2>
-
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Em breve novos modelos inspirados nos heróis favoritos.
-</p>
-
+<h2 id="superherois">🦸 Super-Heróis</h2>
+<div class="separador"></div>
+<p>Transforme fotos em artes inspiradas nos heróis favoritos.</p>
 </section>
 
 <section>
-
-<h2 id="restauracao" style="text-align:center;margin-top:60px;">
-🖼️ Restauração de Fotos
-</h2>
-
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Recupere fotos antigas, danificadas ou com baixa qualidade.
-</p>
-
+<h2 id="restauracao">🖼️ Restauração de Fotos</h2>
+<div class="separador"></div>
+<p>Recupere fotografias antigas, danificadas ou sem qualidade.</p>
 </section>
 
 <section>
-
-<h2 id="arte" style="text-align:center;margin-top:60px;">
-🎨 Personalização Artística
-</h2>
-
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Transforme suas fotos em pinturas e obras exclusivas.
-</p>
-
+<h2 id="arte">🎨 Personalização Artística</h2>
+<div class="separador"></div>
+<p>Transforme suas fotos em pinturas, quadros e obras exclusivas.</p>
 </section>
 
 <section>
-
-<h2 id="mesversario" style="text-align:center;margin-top:60px;">
-🎂 Mesversário
-</h2>
-
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Artes criativas para registrar momentos especiais.
-</p>
-
+<h2 id="mesversario">🎂 Mesversário</h2>
+<div class="separador"></div>
+<p>Artes criativas para registrar momentos especiais.</p>
 </section>
-    
+
 <footer id="contato">
 
 <div class="footer-menu">
-    <a href="#inicio">Início</a>
-    <a href="#criancas">Crianças</a>
-    <a href="#pets">Pets</a>
-    <a href="#contato">Contato</a>
+<a href="#copa">Copa</a>
+<a href="#superherois">Super-Heróis</a>
+<a href="#restauracao">Restauração</a>
+<a href="#arte">Arte</a>
+<a href="#mesversario">Mesversário</a>
 </div>
 
-<p>© 2026 Surreal Studio Design</p>
+<p>© 2026 Surreal Design Studio</p>
 
 </footer>
 
