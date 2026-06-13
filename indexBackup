@@ -101,7 +101,7 @@ header p{
     transition:0.3s;
    }
 
-.card-inner{
+.card.flip .card-inner{
     position:relative;
     width:100%;
     height:100%;
@@ -113,15 +113,15 @@ header p{
     transform:rotateY(180deg);
 }
 
-.card-front,
-.card-back{
+.card.flip .card-front,
+.card.flip .card-back{
     backface-visibility:hidden;
     display:flex;
     flex-direction:column;
     height:100%;
 }
 
-.card-back{
+.card.flip .card-back{
     position:absolute;
     top:0;
     left:0;
@@ -146,6 +146,57 @@ header p{
     transform:scale(1.05);
 
 }
+
+
+/* ==========================================
+   EFEITO DE VIRAR A FIGURINHA
+   Aplicado apenas nos cards com class="flip"
+========================================== */
+
+.card.flip{
+    perspective:1000px;
+}
+
+/* Container interno que gira */
+
+.card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .7s;
+    transform-style:preserve-3d;
+}
+
+/* Quando recebe a classe "virado" */
+
+.card.flip.virado .card-inner{
+    transform:rotateY(180deg);
+}
+
+/* Frente e verso da figurinha */
+
+.card-front,
+.card-back{
+    backface-visibility:hidden;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+/* Verso da figurinha */
+
+.card-back{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    transform:rotateY(180deg);
+    background:#161B22;
+    padding:20px;
+}
+
+/*Flip fim*/    
 
 .info{
     padding:15px;
@@ -242,6 +293,45 @@ header h1{
 
 }
 
+    .hero{
+    max-width:900px;
+    margin:40px auto 10px;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:2.6rem;
+    line-height:1.2;
+    margin-bottom:16px;
+    color:#fff;
+    font-weight:800;
+}
+
+.hero p{
+    max-width:650px;
+    margin:0 auto;
+    color:#c9d1d9;
+    font-size:1.1rem;
+    line-height:1.6;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 28px;
+    border-radius:50px;
+    background:#ffd54a;
+    color:#111;
+    text-decoration:none;
+    font-weight:700;
+    transition:.2s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-2px);
+}
+
 </style>
 
 </head>
@@ -271,20 +361,28 @@ document.addEventListener('keydown', function(e){
 
 <header>
 
-<h1>Surreal Design Studio</h1>
-
-<p style="max-width:800px;margin:20px auto;color:#c9d1d9;">
-Transformamos fotos em lembranças únicas, presentes emocionantes e artes criativas para crianças, adultos e pets.
-</p>
-
 <nav class="menu">
     <a href="#copa">⚽ Copa</a>
-    <a href="#superherois">🦸 Super-Heróis</a>
+    <a href="#superherois">🏆 Cards Premium</a>
     <a href="#restauracao">🖼️ Restauração</a>
     <a href="#arte">🎨 Arte</a>
     <a href="#mesversario">🎂 Mesversário</a>
     <a href="#contato">📱 Contato</a>
 </nav>
+
+<div class="hero">
+
+    <h1> Momentos Especiais Merecem Ser Eternizados </h1>
+
+    <p>
+        Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar.
+    </p>
+
+    <a href="#copa" class="hero-btn">
+        Ver Coleções
+    </a>
+
+</div>
 
 </header>
 
@@ -295,142 +393,271 @@ Transformamos fotos em lembranças únicas, presentes emocionantes e artes criat
 </h2>
 
 <p style="text-align:center;color:#c9d1d9;margin-bottom:30px;">
-Transforme qualquer pessoa ou pet em um craque da Copa 2026.
+Transforme quem você ama em uma estrela da Copa 2026.
 </p>
-    
+    <!-- ********************** copiar daqui até fim de section  **************************** -->
 <div class="catalogo">
 
 <!-- MODELO 1 -->
 
-    <div class="card">
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
+
+<div class="card flip">
+
+    <!-- Container que gira -->
     <div class="card-inner">
 
+        <!-- Frente da figurinha -->
         <div class="card-front">
-            <img 
-            src="assets/img/copa/figurinha-copa-tradicional.png.jpg"
-            alt="Figurinha personalizada da Copa do Mundo">
+
+            <img
+src="assets/img/copa/figurinha-copa-tradicional.png.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
 
             <div class="info">
+
                 <h3>Figurinha da Copa</h3>
+
                 <p>Transforme seu filho em um craque da Copa do Mundo.</p>
-                <a class="botao" href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional." target="_blank">
-                    Pedir no WhatsApp
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional."
+                target="_blank">
+
+                Pedir no WhatsApp
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="card-back">
-            <h3>Figurinha da Copa</h3>
+        <!-- Verso da figurinha -->
+ <div class="card-back">
+
+            <h3>Figurinha da Copa com Ídolo</h3>
+
             <p><strong>Valor:</strong> R$ 9,90</p>
+
             <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+
             <p><strong>Prazo:</strong> até 24h</p>
+
             <p><strong>Você envia:</strong> foto + nome + idade + time</p>
 
-            <a class="botao" href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional." target="_blank">
-                Pedir agora
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Seu filho com um craque da Copa do Mundo."
+            target="_blank">
+
+            Pedir agora
+
             </a>
+
         </div>
 
     </div>
-</div>
-
-<div class="info">
-
-<h3>Figurinha da Copa</h3>
-
-<p>Transforme seu filho em um craque da Copa do Mundo.</p>
-
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional."
-target="_blank">
-
-Pedir no WhatsApp
-
-</a>
 
 </div>
+
+    <!-- fim flip -->
+
+    
+<!-- MODELO 2 -->
+
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
+
+<div class="card flip">
+
+    <!-- Container que gira -->
+    <div class="card-inner">
+
+        <!-- Frente da figurinha -->
+        <div class="card-front">
+
+            <img
+src="assets/img/copa/crianca-com-idolo.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
+
+            <div class="info">
+
+                <h3>Figurinha da Copa</h3>
+
+                <p>Seu filho com um craque da Copa do Mundo.</p>
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Seu filho com um craque da Copa do Mundo."
+                target="_blank">
+
+                Pedir no WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Verso da figurinha -->
+        <div class="card-back">
+
+            <h3>Figurinha da Copa com Ídolo</h3>
+
+            <p><strong>Valor:</strong> R$ 9,90</p>
+
+            <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+
+            <p><strong>Prazo:</strong> até 24h</p>
+
+            <p><strong>Você envia:</strong> foto + nome + idade + time</p>
+
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Seu filho com um craque da Copa do Mundo."
+            target="_blank">
+
+            Pedir agora
+
+            </a>
+
+        </div>
 
     </div>
 
-<!-- MODELO 2 -->
-
-<div class="card">
-
-<img
-    src="assets/img/copa/figurinha-copa-extra.jpg"
-alt="Figurinha personalizada da Copa Extra">
-
-<div class="info">
-
-<h3>Figurinha da Copa Extra</h3>
-
-<p>Uma lembrança inesquecível para futuros campeões.</p>
-
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Extra."
-target="_blank">
-
-Pedir no WhatsApp
-
-</a>
-
 </div>
 
-</div>
+    <!-- fim flip -->
 
 <!-- MODELO 3 -->
 
-<div class="card">
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
 
-<img
-src="assets/img/copa/card-future-legend.png.jpg"
-alt="Card personalizado Future Legend">
+<div class="card flip">
 
-<div class="info">
+    <!-- Container que gira -->
+    <div class="card-inner">
 
-<h3>Card Premium Future Legend </h3>
+        <!-- Frente da figurinha -->
+        <div class="card-front">
 
-<p>Seu futuro craque vestindo as cores da seleção que ele gosta.</p>
+            <img
+src="assets/img/copa/Namorados.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
 
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Card Premium Future Legend."
-target="_blank">
+            <div class="info">
 
-Pedir no WhatsApp
+                <h3>Figurinha da Copa</h3>
 
-</a>
+                <p>Transforme seu filho em um craque da Copa do Mundo.</p>
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Casal na Copa."
+                target="_blank">
+
+                Pedir no WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Verso da figurinha -->
+        <div class="card-back">
+
+            <h3>Figurinha da Copa</h3>
+
+            <p><strong>Valor:</strong> R$ 9,90</p>
+
+            <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+
+            <p><strong>Prazo:</strong> até 24h</p>
+
+            <p><strong>Você envia:</strong> foto + nome + idade + time</p>
+
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Casal na Copa."
+            target="_blank">
+
+            Pedir agora
+
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
+    <!-- fim flip -->
 
 <!-- MODELO 4 -->
 
-<div class="card">
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
 
-<img
-src="assets/img/copa/figurinha-fifa-world-cup-brasil.jpg"
-alt="Card personalizado Future Legend">
+<div class="card flip">
 
-<div class="info">
+    <!-- Container que gira -->
+    <div class="card-inner">
 
-<h3>Pet Craque</h3>
+        <!-- Frente da figurinha -->
+        <div class="card-front">
 
-<p>Seu melhor amigo também merece entrar em campo.</p>
+            <img
+src="assets/img/copa/figurinha-copa-extra.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
 
-<a class="botao"
-href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Pet Craque."
-target="_blank">
+            <div class="info">
 
-Pedir no WhatsApp
+                <h3>Figurinha da Copa Extra</h3>
 
-</a>
+                <p>Transforme seu filho em um craque da Copa do Mundo.</p>
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Extra."
+                target="_blank">
+
+                Pedir no WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Verso da figurinha -->
+        <div class="card-back">
+
+            <h3>Figurinha da Copa</h3>
+
+            <p><strong>Valor:</strong> R$ 9,90</p>
+
+            <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+
+            <p><strong>Prazo:</strong> até 24h</p>
+
+            <p><strong>Você envia:</strong> foto + nome + idade + time</p>
+
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional."
+            target="_blank">
+
+            Pedir agora
+
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
-
-</div>
+    <!-- fim flip -->
 
 </div>
 
@@ -439,24 +666,275 @@ Pedir no WhatsApp
 <section>
 
 <h2 id="superherois" style="text-align:center;margin-top:60px;">
-🦸 Super-Heróis
+🏆 Cards Premium Personalizados
 </h2>
 
 <p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
 Em breve novos modelos inspirados nos heróis favoritos.
 </p>
+<!-- ********************** copiar daqui até fim de section  **************************** -->
+<div class="catalogo">
 
-</section>
+<!-- MODELO 1 -->
 
-<section>
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
 
-<h2 id="restauracao" style="text-align:center;margin-top:60px;">
-🖼️ Restauração de Fotos
-</h2>
+<div class="card flip">
 
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Recupere fotos antigas, danificadas ou com baixa qualidade.
-</p>
+    <!-- Container que gira -->
+    <div class="card-inner">
+
+        <!-- Frente da figurinha -->
+        <div class="card-front">
+
+            <img
+src="assets/img/copa/figurinha-copa-tradicional.png.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
+
+            <div class="info">
+
+                <h3>Figurinha da Copa</h3>
+
+                <p>Transforme seu filho em um craque da Copa do Mundo.</p>
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional."
+                target="_blank">
+
+                Pedir no WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Verso da figurinha -->
+        <div class="card-back">
+
+            <h3>Figurinha da Copa</h3>
+
+            <p><strong>Valor:</strong> Uma foto por R$ 9,90</p>
+            <p><strong>Valor:</strong> Duas foto por R$ 14,90</p>
+            <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+            <p><strong>Prazo:</strong> até 24h</p>
+            <p><strong>Você envia:</strong> foto + idade + altura + peso + Seleção</p>
+
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional."
+            target="_blank">
+
+            Pedir agora
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- fim flip -->
+
+    
+<!-- MODELO 2 -->
+
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
+
+<div class="card flip">
+
+    <!-- Container que gira -->
+    <div class="card-inner">
+
+        <!-- Frente da figurinha -->
+        <div class="card-front">
+
+            <img
+src="assets/img/copa/crianca-com-idolo.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
+
+            <div class="info">
+
+                <h3>Figurinha da Copa</h3>
+
+                <p>Seu filho com um craque da Copa do Mundo.</p>
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Seu filho com um craque da Copa do Mundo."
+                target="_blank">
+
+                Pedir no WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Verso da figurinha -->
+        <div class="card-back">
+
+            <h3>Figurinha da Copa com Ídolo</h3>
+
+            <p><strong>Valor:</strong> R$ 9,90</p>
+
+            <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+
+            <p><strong>Prazo:</strong> até 24h</p>
+
+            <p><strong>Você envia:</strong> foto + nome + idade + time</p>
+
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Seu filho com um craque da Copa do Mundo."
+            target="_blank">
+
+            Pedir agora
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- fim flip -->
+
+<!-- MODELO 3 -->
+
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
+
+<div class="card flip">
+
+    <!-- Container que gira -->
+    <div class="card-inner">
+
+        <!-- Frente da figurinha -->
+        <div class="card-front">
+
+            <img
+src="assets/img/copa/Namorados.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
+
+            <div class="info">
+
+                <h3>Figurinha da Copa</h3>
+
+                <p>Transforme seu filho em um craque da Copa do Mundo.</p>
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Casal na Copa."
+                target="_blank">
+
+                Pedir no WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Verso da figurinha -->
+        <div class="card-back">
+
+            <h3>Figurinha da Copa</h3>
+
+            <p><strong>Valor:</strong> R$ 9,90</p>
+
+            <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+
+            <p><strong>Prazo:</strong> até 24h</p>
+
+            <p><strong>Você envia:</strong> foto + nome + idade + time</p>
+
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha Casal na Copa."
+            target="_blank">
+
+            Pedir agora
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- fim flip -->
+
+<!-- MODELO 4 -->
+
+<!-- ==========================================
+     FIGURINHA COM EFEITO DE VIRAR
+========================================== -->
+
+<div class="card flip">
+
+    <!-- Container que gira -->
+    <div class="card-inner">
+
+        <!-- Frente da figurinha -->
+        <div class="card-front">
+
+            <img
+src="assets/img/copa/figurinha-copa-extra.jpg"
+alt="Figurinha personalizada da Copa do Mundo">
+
+            <div class="info">
+
+                <h3>Figurinha da Copa Extra</h3>
+
+                <p>Transforme seu filho em um craque da Copa do Mundo.</p>
+
+                <a class="botao"
+                href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Extra."
+                target="_blank">
+
+                Pedir no WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Verso da figurinha -->
+        <div class="card-back">
+
+            <h3>Figurinha da Copa</h3>
+
+            <p><strong>Valor:</strong> R$ 9,90</p>
+
+            <p><strong>Entrega:</strong> Digital pelo WhatsApp</p>
+
+            <p><strong>Prazo:</strong> até 24h</p>
+
+            <p><strong>Você envia:</strong> foto + nome + idade + time</p>
+
+            <a class="botao"
+            href="https://wa.me/5511988623592?text=Olá! Tenho interesse no modelo Figurinha da Copa Tradicional."
+            target="_blank">
+
+            Pedir agora
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- fim flip -->
+
+</div>
 
 </section>
 
@@ -499,7 +977,10 @@ Artes criativas para registrar momentos especiais.
 </footer>
 
 <script>
-document.querySelectorAll('.card').forEach(function(card){
+
+/* Virar figurinha ao clicar */
+
+document.querySelectorAll('.card.flip').forEach(function(card){
 
     card.addEventListener('click', function(e){
 
@@ -512,8 +993,8 @@ document.querySelectorAll('.card').forEach(function(card){
     });
 
 });
+
 </script>
-    
 
 </body>
 </html>
