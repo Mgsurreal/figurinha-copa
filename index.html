@@ -505,6 +505,22 @@ Artes criativas para registrar momentos especiais.
 
 </footer>
 
+<script>
+document.querySelectorAll('.card').forEach(function(card){
+
+    card.addEventListener('click', function(e){
+
+        if(e.target.tagName.toLowerCase() === 'a'){
+            return;
+        }
+
+        card.classList.toggle('virado');
+
+    });
+
+});
+</script>
+    
 
 </body>
 </html>
