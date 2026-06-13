@@ -81,16 +81,14 @@ header p{
 }
 
 .card{
-
     background:#161B22;
-
     border:1px solid #30363D;
-
     border-radius:15px;
-
     overflow:hidden;
-
     transition:0.3s;
+
+    display:flex;
+    flex-direction:column;
 }
    .card img{
     width:100%;
@@ -114,8 +112,11 @@ header p{
 }
 
 .info{
-
     padding:15px;
+
+    display:flex;
+    flex-direction:column;
+    flex:1;
 }
 
 .info h3{
@@ -133,26 +134,19 @@ header p{
 }
 
 .botao{
-
     display:block;
-
     text-align:center;
-
     background:#25D366;
-
     color:white;
-
     text-decoration:none;
-
     padding:12px;
-
     border-radius:8px;
-
     font-weight:bold;
-
     transition:0.3s;
-}
 
+    margin-top:auto;
+}
+    
 .botao:hover{
 
     background:#1ebe5d;
