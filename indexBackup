@@ -442,6 +442,18 @@ header h1{
 
 }
 
+.hero-imagem{
+    width:100%;
+    min-height:410px;
+
+    background-image:url("assets/banner/hero-premium.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border-radius:15px;
+}
+
     .hero{
     max-width:900px;
     margin:40px auto 10px;
@@ -601,7 +613,7 @@ document.addEventListener('keydown', function(e){
     </div>
 
     <div class="hero-imagem">
-        <img src="assets/banner/hero-premium.jpg" alt="Artes personalizadas Surreal Design Studio">
+        <div class="hero-imagem"></div>
     </div>
 </section>
 
