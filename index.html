@@ -349,40 +349,53 @@ header h1{
 }
 
     .restauracao-grid{
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.restauracao-item{
+display:flex;
+flex-direction:column;
 }
 
 .restauracao-card{
-    position:relative;
-    overflow:hidden;
-    border-radius:15px;
-    border:1px solid #30363D;
-    cursor:pointer;
+position:relative;
+height:420px;
+overflow:hidden;
+border-radius:15px;
+border:1px solid #30363D;
+cursor:pointer;
 }
 
 .restauracao-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
 }
 
 .foto-depois{
-    position:absolute;
-    inset:0;
-    opacity:0;
-    transition:opacity .4s ease;
+position:absolute;
+inset:0;
+opacity:0;
+transition:.4s ease;
 }
 
 .restauracao-card:hover .foto-depois{
-    opacity:1;
+opacity:1;
 }
 
-@media(max-width:700px){
-    .restauracao-grid{
-        grid-template-columns:1fr;
-    }
+.restauracao-item .botao{
+margin-top:15px;
+}
+
+@media(max-width:900px){
+.restauracao-grid{
+grid-template-columns:1fr;
+}
 }
 
 </style>
@@ -1006,28 +1019,15 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 <p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
 Restaure memórias e dê nova vida às suas fotos preferidas.
-    <br>Clique na foto para restaurar</br>
 </p>
 
-<div class="catalogo restauracao-grid">
+<div class="restauracao-grid">
 
-    <div class="restauracao-card">
-        <img class="foto-antes" src="assets/img/restauracao/cidade-antiga1.jpg" alt="Foto antiga antes da restauração">
-        <img class="foto-depois" src="assets/img/restauracao/cidade-antiga2.jpg" alt="Foto restaurada depois">
-    </div>
+    <!-- coluna 1 -->
 
-    <div class="card">
-        <div class="info">
-            <h3>Restauração de Fotos</h3>
-            <p>Recupere fotos antigas, danificadas ou apagadas e transforme lembranças em imagens vivas novamente.</p>
+    <!-- coluna 2 -->
 
-            <a class="botao"
-            href="https://wa.me/5511988623592?text=Olá! Tenho interesse em restauração de fotos."
-            target="_blank">
-            Restaurar minha foto
-            </a>
-        </div>
-    </div>
+    <!-- coluna 3 -->
 
 </div>
 
