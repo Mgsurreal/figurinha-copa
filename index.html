@@ -11,6 +11,106 @@
     html{
     scroll-behavior:smooth;
 }
+
+
+.topo-premium{
+    max-width:1400px;
+    margin:20px auto 0;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    border:1px solid #30363D;
+    border-radius:18px;
+    background:rgba(8,11,16,.85);
+}
+
+.logo{
+    font-weight:bold;
+    color:#FFD700;
+    font-size:20px;
+}
+
+.menu-premium{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+.menu-premium a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.whatsapp-topo,
+.botao-hero{
+    background:#FFD700;
+    color:#111;
+    padding:12px 20px;
+    border-radius:999px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.hero-premium{
+    max-width:1400px;
+    margin:30px auto 60px;
+    padding:60px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+    border-radius:24px;
+    background:linear-gradient(135deg,#05070A,#161B22);
+    border:1px solid #30363D;
+}
+
+.hero-texto h1{
+    font-size:4rem;
+    line-height:1.05;
+}
+
+.hero-texto h1 span{
+    color:#FFD700;
+}
+
+.hero-texto p{
+    color:#c9d1d9;
+    margin:25px 0;
+    font-size:1.2rem;
+}
+
+.hero-imagem img{
+    width:100%;
+    border-radius:20px;
+}
+
+
+.hero-premium{
+
+    max-width:1400px;
+    min-height:534px;
+
+    margin:30px auto;
+
+    padding:60px;
+
+    border-radius:20px;
+
+    background-image:url("assets/banner/hero-premium.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+}
+
+
+
 </style>
 
     <style>
@@ -364,6 +464,18 @@ header h1{
 
 }
 
+.hero-imagem{
+    width:100%;
+    min-height:410px;
+
+    background-image:url("assets/banner/hero-premium.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border-radius:15px;
+}
+
     .hero{
     max-width:900px;
     margin:40px auto 10px;
@@ -478,51 +590,42 @@ grid-template-columns:1fr;
 
 <body>
 
-    <script>
-document.addEventListener('keydown', function(e){
 
-    if(e.key === 'F12'){
-        e.preventDefault();
-    }
 
-    if(e.ctrlKey && (
-        e.key === 'u' ||
-        e.key === 'U' ||
-        e.key === 's' ||
-        e.key === 'S' ||
-        e.key === 'c' ||
-        e.key === 'C'
-    )){
-        e.preventDefault();
-    }
+<header class="topo-premium">
+    <div class="logo">🏆 Surreal Design Studio</div>
 
-});
-</script>
+    <nav class="menu-premium">
+        <a href="#copa">⚽ Copa</a>
+        <a href="#cardspremium">🏆 Cards Premium</a>
+        <a href="#restauracao">🖼️ Restauração</a>
+        <a href="#precos">💰 Preços</a>
+        <a href="#contato">📱 Contato</a>
+    </nav>
 
-<header>
-
-<div class="hero">
-
-    <h1> Momentos Especiais Merecem Ser Eternizados </h1>
-
-    <p>
-        Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar. 
-    </p>
-
-<!-- ===========================================================================================================================================================
-   MENU              MENU              MENU              MENU              MENU              MENU              MENU              MENU              MENU        
-================================================================================================================================================================= -->
-    
-    <nav class="menu">
-<a href="#copa">⚽ Copa</a>
-<a href="#cardspremium">🏆 Cards Premium</a>
-<a href="#restauracao">🖼️ Restauração</a>
-<a href="#contato">💰 Preços</a>
-<a href="#contato">📱 Contato</a>
-
-</div>
-
+    <a class="whatsapp-topo" href="https://wa.me/5511988623592" target="_blank">
+        Fale conosco
+    </a>
 </header>
+
+<section class="hero-premium">
+
+    <div class="hero-texto">
+        <h1>
+            Momentos Especiais<br>
+            <span>Merecem Ser Eternizados</span>
+        </h1>
+
+        <p>
+            Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar.
+        </p>
+
+        <a href="#copa" class="botao-hero">
+            Conheça os produtos
+        </a>
+    </div>
+
+</section>
 
 
         <!-- ===========================================================================================================================================================
