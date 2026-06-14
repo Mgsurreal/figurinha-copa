@@ -109,6 +109,46 @@
     align-items:center;
 }
 
+.secao-produtos{
+    padding:70px 20px 40px;
+}
+
+.secao-cabecalho{
+    max-width:850px;
+    margin:0 auto 40px;
+    text-align:center;
+}
+
+.secao-etiqueta{
+    display:inline-block;
+    margin-bottom:14px;
+    padding:8px 18px;
+    border:1px solid rgba(255,215,0,.35);
+    border-radius:999px;
+    color:#FFD700;
+    background:rgba(255,215,0,.08);
+    font-weight:bold;
+    font-size:.9rem;
+}
+
+.secao-cabecalho h2{
+    font-size:2.4rem;
+    margin-bottom:12px;
+}
+
+.secao-cabecalho p{
+    color:#c9d1d9;
+    font-size:1.1rem;
+    line-height:1.5;
+}
+
+.secao-cabecalho small{
+    display:inline-block;
+    margin-top:14px;
+    color:#FFD700;
+    font-weight:bold;
+}
+
 
 
 </style>
@@ -580,7 +620,39 @@ grid-template-columns:1fr;
     .destaque{
     color:#FFD700;
 }
-    
+
+.categoria-titulo{
+    text-align:center;
+    margin:40px 0 30px;
+}
+
+.categoria-tag{
+    display:inline-block;
+    background:rgba(255,215,0,.1);
+    border:1px solid rgba(255,215,0,.3);
+    color:#FFD700;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.categoria-titulo h2{
+    margin:10px 0;
+    font-size:2.2rem;
+}
+
+.categoria-titulo p{
+    color:#c9d1d9;
+    margin-bottom:10px;
+}
+
+.categoria-aviso{
+    color:#FFD700;
+    font-weight:bold;
+    font-size:14px;
+}
+
 
 </style>
 
@@ -599,7 +671,7 @@ grid-template-columns:1fr;
         <a href="#copa">⚽ Copa</a>
         <a href="#cardspremium">🏆 Cards Premium</a>
         <a href="#restauracao">🖼️ Restauração</a>
-        <a href="#precos">💰 Preços</a>
+        <a href="#contato">💰 Preços</a>
         <a href="#contato">📱 Contato</a>
     </nav>
 
@@ -634,16 +706,25 @@ grid-template-columns:1fr;
 
 <section>
 
-<h2 id="copa" style="text-align:center;margin-top:40px;margin-bottom:10px;">
-⚽ Figurinha Copa do Mundo
-</h2>
+<div class="categoria-titulo">
 
-<p style="text-align:center;color:#c9d1d9;margin-bottom:30px;">
-Transforme quem você ama em uma estrela da Copa 2026.
-    <br><span class="destaque">Para mais informações clique na foto.</span>.
+    <span class="categoria-tag">
+        ⚽ Copa 2026
+    </span>
 
-</p>
-</p>
+    <h2 id="copa">
+        Figurinha Copa do Mundo
+    </h2>
+
+    <p>
+        Transforme quem você ama em uma estrela da Copa 2026.
+    </p>
+
+    <span class="categoria-aviso">
+        Clique na figurinha para ver preços e informações.
+    </span>
+
+</div>
     <!-- ********************** copiar daqui até fim de section  **************************** -->
 <div class="catalogo">
 
@@ -919,16 +1000,25 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 <section>
 
-<h2 id="cardspremium" style="text-align:center;margin-top:60px;">
-🏆 Cards Premium Personalizados
-</h2>
+<div class="categoria-titulo">
 
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Seu herói, sua história, seu card exclusivo..
-    <br><span class="destaque">Para mais informações clique na foto.</span>.
+    <span class="categoria-tag">
+        🏆 Coleção Premium
+    </span>
 
-</p>
-</p>
+    <h2 id="cardspremium">
+        Cards Premium Personalizados
+    </h2>
+
+    <p>
+        Transforme fotos comuns em cards exclusivos dignos de coleção.
+    </p>
+
+    <span class="categoria-aviso">
+        Clique no card para ver preços e informações.
+    </span>
+
+</div>
 <!-- ********************** copiar daqui até fim de section  **************************** -->
 <div class="catalogo">
 
@@ -1198,16 +1288,25 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 <section id="restauracao">
 
-<h2 style="text-align:center;margin-top:60px;">
-🎨 Restauração de Fotos
-</h2>
+<div class="categoria-titulo">
 
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Restaure memórias e dê nova vida às suas fotos preferidas.
-    <br><span class="destaque">Clique ou passe o mouse sobre as fotos para restaurar</span>.
+    <span class="categoria-tag">
+        🖼️ Memórias Restauradas
+    </span>
 
-</p>
-</p>
+    <h2 id="restauracao">
+        Restauração de Fotos
+    </h2>
+
+    <p>
+        Recupere fotos antigas, danificadas ou apagadas pelo tempo.
+    </p>
+
+    <span class="categoria-aviso">
+        Passe o mouse ou toque na imagem para ver o antes e depois.
+    </span>
+
+</div>
 
 <div class="restauracao-grid">
 
