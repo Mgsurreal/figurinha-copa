@@ -499,30 +499,33 @@ document.addEventListener('keydown', function(e){
 });
 </script>
 
-<header>
+<header class="topo-premium">
+    <div class="logo">🏆 Surreal Design Studio</div>
 
-<div class="hero">
+    <nav class="menu-premium">
+        <a href="#copa">⚽ Copa</a>
+        <a href="#cardspremium">🏆 Cards Premium</a>
+        <a href="#restauracao">🖼️ Restauração</a>
+        <a href="#precos">💰 Preços</a>
+        <a href="#contato">📱 Contato</a>
+    </nav>
 
-    <h1> Momentos Especiais Merecem Ser Eternizados </h1>
-
-    <p>
-        Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar. 
-    </p>
-
-<!-- ===========================================================================================================================================================
-   MENU              MENU              MENU              MENU              MENU              MENU              MENU              MENU              MENU        
-================================================================================================================================================================= -->
-    
-    <nav class="menu">
-<a href="#copa">⚽ Copa</a>
-<a href="#cardspremium">🏆 Cards Premium</a>
-<a href="#restauracao">🖼️ Restauração</a>
-<a href="#contato">💰 Preços</a>
-<a href="#contato">📱 Contato</a>
-
-</div>
-
+    <a class="whatsapp-topo" href="https://wa.me/5511988623592" target="_blank">
+        Fale conosco
+    </a>
 </header>
+
+<section class="hero-premium">
+    <div class="hero-texto">
+        <h1>Momentos Especiais<br><span>Merecem Ser Eternizados</span></h1>
+        <p>Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar.</p>
+        <a href="#copa" class="botao-hero">Conheça os produtos</a>
+    </div>
+
+    <div class="hero-imagem">
+        <img src="assets/img/banner/topo-premium.jpg" alt="Artes personalizadas Surreal Design Studio">
+    </div>
+</section>
 
 
         <!-- ===========================================================================================================================================================
