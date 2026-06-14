@@ -523,7 +523,7 @@ document.addEventListener('keydown', function(e){
     </div>
 
     <div class="hero-imagem">
-        <img src="assets/img/banner/topo-premium.jpg" alt="Artes personalizadas Surreal Design Studio">
+        <img src="assets/img/banner/hero-premium.jpg" alt="Artes personalizadas Surreal Design Studio">
     </div>
 </section>
 
