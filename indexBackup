@@ -99,7 +99,7 @@
 
     border-radius:20px;
 
-    background-image:url("assets/img/banner/hero-premium.jpg");
+    background-image:url("assets/banner/hero-premium.jpg");
 
     background-size:cover;
     background-position:center;
