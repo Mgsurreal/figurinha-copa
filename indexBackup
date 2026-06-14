@@ -1000,16 +1000,25 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 <section>
 
-<h2 id="cardspremium" style="text-align:center;margin-top:60px;">
-🏆 Cards Premium Personalizados
-</h2>
+<div class="categoria-titulo">
 
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Seu herói, sua história, seu card exclusivo..
-    <br><span class="destaque">Para mais informações clique na foto.</span>.
+    <span class="categoria-tag">
+        🏆 Coleção Premium
+    </span>
 
-</p>
-</p>
+    <h2 id="cardspremium">
+        Cards Premium Personalizados
+    </h2>
+
+    <p>
+        Transforme fotos comuns em cards exclusivos dignos de coleção.
+    </p>
+
+    <span class="categoria-aviso">
+        Clique no card para ver preços e informações.
+    </span>
+
+</div>
 <!-- ********************** copiar daqui até fim de section  **************************** -->
 <div class="catalogo">
 
@@ -1279,16 +1288,25 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 <section id="restauracao">
 
-<h2 style="text-align:center;margin-top:60px;">
-🎨 Restauração de Fotos
-</h2>
+<div class="categoria-titulo">
 
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Restaure memórias e dê nova vida às suas fotos preferidas.
-    <br><span class="destaque">Clique ou passe o mouse sobre as fotos para restaurar</span>.
+    <span class="categoria-tag">
+        🖼️ Memórias Restauradas
+    </span>
 
-</p>
-</p>
+    <h2 id="restauracao">
+        Restauração de Fotos
+    </h2>
+
+    <p>
+        Recupere fotos antigas, danificadas ou apagadas pelo tempo.
+    </p>
+
+    <span class="categoria-aviso">
+        Passe o mouse ou toque na imagem para ver o antes e depois.
+    </span>
+
+</div>
 
 <div class="restauracao-grid">
 
