@@ -88,6 +88,28 @@
 }
 
 
+.hero-premium{
+
+    max-width:1400px;
+    min-height:534px;
+
+    margin:30px auto;
+
+    padding:60px;
+
+    border-radius:20px;
+
+    background-image:url("assets/img/banner/hero-premium.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+}
+
+
 
 </style>
 
@@ -587,15 +609,22 @@ grid-template-columns:1fr;
 </header>
 
 <section class="hero-premium">
+
     <div class="hero-texto">
-        <h1>Momentos Especiais<br><span>Merecem Ser Eternizados</span></h1>
-        <p>Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar.</p>
-        <a href="#copa" class="botao-hero">Conheça os produtos</a>
+        <h1>
+            Momentos Especiais<br>
+            <span>Merecem Ser Eternizados</span>
+        </h1>
+
+        <p>
+            Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar.
+        </p>
+
+        <a href="#copa" class="botao-hero">
+            Conheça os produtos
+        </a>
     </div>
 
-    <div class="hero-imagem">
-        <div class="hero-imagem"></div>
-    </div>
 </section>
 
 
