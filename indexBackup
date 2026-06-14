@@ -620,7 +620,39 @@ grid-template-columns:1fr;
     .destaque{
     color:#FFD700;
 }
-    
+
+.categoria-titulo{
+    text-align:center;
+    margin:40px 0 30px;
+}
+
+.categoria-tag{
+    display:inline-block;
+    background:rgba(255,215,0,.1);
+    border:1px solid rgba(255,215,0,.3);
+    color:#FFD700;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.categoria-titulo h2{
+    margin:10px 0;
+    font-size:2.2rem;
+}
+
+.categoria-titulo p{
+    color:#c9d1d9;
+    margin-bottom:10px;
+}
+
+.categoria-aviso{
+    color:#FFD700;
+    font-weight:bold;
+    font-size:14px;
+}
+
 
 </style>
 
@@ -672,23 +704,27 @@ grid-template-columns:1fr;
     FIGURINHA COPA DO MUNDO - FIGURINHA COPA DO MUNDO - FIGURINHA COPA DO MUNDO - FIGURINHA COPA DO MUNDO - FIGURINHA COPA DO MUNDO - FIGURINHA COPA DO MUNDO -  
 ================================================================================================================================================================= -->
 
-<section id="copa" class="secao-produtos">
+<section>
 
-    <div class="secao-cabecalho">
+<div class="categoria-titulo">
 
-        <span class="secao-etiqueta">
-            ⚽ Linha Copa 2026
-        </span>
+    <span class="categoria-tag">
+        ⚽ Copa 2026
+    </span>
 
-        <h2>Figurinha Copa do Mundo</h2>
+    <h2 id="copa">
+        Figurinha Copa do Mundo
+    </h2>
 
-        <p>
-            Transforme quem você ama em uma estrela da Copa 2026.
-        </p>
+    <p>
+        Transforme quem você ama em uma estrela da Copa 2026.
+    </p>
 
-        <small>
-            Clique na figurinha para ver preços, informações e fazer seu pedido.
-        </small>
+    <span class="categoria-aviso">
+        Clique na figurinha para ver preços e informações.
+    </span>
+
+</div>
     <!-- ********************** copiar daqui até fim de section  **************************** -->
 <div class="catalogo">
 
