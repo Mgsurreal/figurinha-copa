@@ -654,6 +654,22 @@ grid-template-columns:1fr;
     font-size:14px;
 }
 
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#FFD700;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.logo img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+}
+
 
 </style>
 
@@ -666,7 +682,15 @@ grid-template-columns:1fr;
 
 
 <header class="topo-premium">
-    <div class="logo">🏆 Surreal Design Studio</div>
+    <div class="logo">
+
+    <img
+        src="assets/img/favicon.png"
+        alt="Surreal Design Studio">
+
+    <span>Surreal Design Studio</span>
+
+</div>
 
     <nav class="menu-premium">
         <a href="#copa">⚽ Copa</a>
