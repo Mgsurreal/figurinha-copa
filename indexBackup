@@ -379,7 +379,7 @@ document.addEventListener('keydown', function(e){
 
 <nav class="menu">
     <a href="#copa">⚽ Copa</a>
-    <a href="#superherois">🏆 Cards Premium</a>
+    <a href="#cardspremium">🏆 Cards Premium</a>
     <a href="#restauracao">🖼️ Restauração</a>
     <a href="#arte">🎨 Arte</a>
     <a href="#mesversario">🎂 Mesversário</a>
@@ -690,7 +690,7 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 <section>
 
-<h2 id="superherois" style="text-align:center;margin-top:60px;">
+<h2 id="cardspremium" style="text-align:center;margin-top:60px;">
 🏆 Cards Premium Personalizados
 </h2>
 
@@ -999,7 +999,7 @@ Artes criativas para registrar momentos especiais.
 
 <div class="footer-menu">
     <a href="#copa">Copa</a>
-    <a href="#superherois">Super-Heróis</a>
+    <a href="#cardspremium">Cards Premium</a>
     <a href="#restauracao">Restauração</a>
     <a href="privacidade.html">Política de Privacidade</a>
     <a href="cookies.html">Política de Cookies</a>
