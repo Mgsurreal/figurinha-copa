@@ -244,6 +244,7 @@ body{
 header{
     text-align:center;
     padding:40px 20px;
+    display:none;
 }
 
 header h1{
