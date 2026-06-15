@@ -1927,7 +1927,7 @@ alt="Figurinha personalizada da Copa do Mundo">
 </div>
     <!--social Icons-->
 
-    <div class="logo">
+<a href="#" class="logo">
 
     <img
         src="assets/img/favicon.png"
@@ -1935,7 +1935,7 @@ alt="Figurinha personalizada da Copa do Mundo">
 
     <span>© 2026 Surreal Design Studio</span>
 
-</div>
+</a>
 
     <div class="footer-menu">
     <a href="privacidade.html">Política de Privacidade</a>
