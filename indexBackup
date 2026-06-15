@@ -60,7 +60,6 @@
 
 
 .topo-premium{
-display:none !important;
     max-width:1400px;
     margin:20px auto 0;
     padding:18px 25px;
@@ -1064,6 +1063,30 @@ grid-template-columns:1fr;
 </header>
 
 <section class="hero-premium">
+
+<header class="topo-premium">
+    <div class="logo">
+
+    <img
+        src="assets/img/favicon.png"
+        alt="Surreal Design Studio">
+
+    <span>Surreal Design Studio</span>
+
+</div>
+
+    <nav class="menu-premium">
+        <a href="#copa">⚽ Copa</a>
+        <a href="#cardspremium">🏆 Cards Premium</a>
+        <a href="#restauracao">🖼️ Restauração</a>
+        <a href="#contato">💰 Preços</a>
+        <a href="#contato">📱 Contato</a>
+    </nav>
+
+    <a class="whatsapp-topo" href="https://wa.me/5511988623592" target="_blank">
+        Fale conosco
+    </a>
+</header>
 
     <div class="hero-texto">
         <h1>
