@@ -671,6 +671,155 @@ grid-template-columns:1fr;
 }
 
 
+
+/* ==================================================
+   RESPONSIVIDADE CELULAR E TABLET
+================================================== */
+
+@media (max-width:768px){
+
+    /* HERO */
+
+    .hero-premium{
+        min-height:auto;
+        padding:35px 25px;
+        background-position:right center;
+    }
+
+    .hero-texto{
+        max-width:100%;
+    }
+
+    .hero-texto h1{
+        font-size:2.4rem;
+        line-height:1.1;
+    }
+
+    .hero-texto p{
+        font-size:1rem;
+    }
+
+    /* MENU */
+
+    .menu{
+        gap:10px;
+        justify-content:center;
+    }
+
+    .menu a{
+        font-size:14px;
+        padding:8px 12px;
+    }
+
+    /* LOGO */
+
+    .logo{
+        gap:8px;
+    }
+
+    .logo img{
+        width:28px;
+        height:28px;
+    }
+
+    /* CATEGORIAS */
+
+    .categoria-titulo{
+        padding:0 15px;
+    }
+
+    .categoria-titulo h2{
+        font-size:1.8rem;
+    }
+
+    .categoria-titulo p{
+        font-size:15px;
+    }
+
+    .categoria-aviso{
+        display:none;
+    }
+
+    /* CATÁLOGOS */
+
+    .catalogo{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    /* CARDS */
+
+    .card{
+        max-width:450px;
+        margin:auto;
+    }
+
+    /* FOOTER */
+
+    .footer-menu{
+        gap:12px;
+    }
+
+    .footer-menu a{
+        font-size:14px;
+    }
+
+}
+
+/* ==================================================
+   CELULARES PEQUENOS
+================================================== */
+
+@media (max-width:480px){
+
+    /* ESCONDE O TEXTO DO LOGO */
+
+    .logo span{
+        display:none;
+    }
+
+    /* HERO */
+
+    .hero-premium{
+        padding:25px 20px;
+    }
+
+    .hero-texto h1{
+        font-size:2rem;
+    }
+
+    .hero-texto p{
+        font-size:14px;
+    }
+
+    .botao-hero{
+        width:100%;
+        text-align:center;
+    }
+
+    /* MENU */
+
+    .menu{
+        gap:8px;
+    }
+
+    .menu a{
+        font-size:13px;
+        padding:8px 10px;
+    }
+
+    /* TÍTULOS */
+
+    .categoria-titulo h2{
+        font-size:1.6rem;
+    }
+
+}
+
+    
+
+
+    
 </style>
 
 
