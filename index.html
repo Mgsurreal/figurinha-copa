@@ -885,6 +885,58 @@ grid-template-columns:1fr;
     }
 
 }
+
+
+
+    /* social icons abre*/
+.rodape-social{
+    text-align:center;
+    margin:50px auto 30px;
+}
+
+.rodape-social p{
+    color:#c9d1d9;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.social-links a,
+.social-links button{
+
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+
+}
+
+.social-links img{
+
+    width:40px;
+    height:40px;
+
+    opacity:.8;
+
+    transition:.3s;
+
+}
+
+.social-links img:hover{
+
+    opacity:1;
+
+    transform:translateY(-4px);
+
+}
+    /* social icons fecha */
     
 
 
@@ -1699,6 +1751,37 @@ Artes criativas para registrar momentos especiais.
     </div>
 
 </div>
+
+
+    <!--social icons-->
+<div class="rodape-social">
+
+    <p>
+        Compartilhe a Surreal Design Studio com alguém especial ❤️
+    </p>
+
+    <div class="social-links">
+
+        <a href="https://wa.me/?text=https://figurinha-copa.surreal-marcosrg.workers.dev" target="_blank">
+            <img src="assets/img/social/whatsapp.png" alt="WhatsApp">
+        </a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://figurinha-copa.surreal-marcosrg.workers.dev" target="_blank">
+            <img src="assets/img/social/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank">
+            <img src="assets/img/social/instagram.png" alt="Instagram">
+        </a>
+
+        <button class="botao-link" onclick="copiarLink()">
+            <img src="assets/img/social/link.png" alt="Copiar Link">
+        </button>
+
+    </div>
+
+</div>
+    <!--social Icons-->
 
 <p>© 2026 Surreal Design Studio</p>
 
