@@ -240,15 +240,10 @@ body{
     color:white;
     font-family:Arial, Helvetica, sans-serif;
 }
-/* 
+
 header{
     text-align:center;
     padding:40px 20px;
-}
-*/
-
-header{
-    display:none
 }
 
 header h1{
