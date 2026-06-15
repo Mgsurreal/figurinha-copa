@@ -1026,6 +1026,13 @@ grid-template-columns:1fr;
 }
     /* carrossel fim */
 
+
+.botao-carrossel{
+    display:flex;
+    justify-content:center;
+    margin-top:35px;
+}
+
     
 </style>
 
@@ -1798,15 +1805,17 @@ alt="Figurinha personalizada da Copa do Mundo">
 
     </div>
 
- <div>
-        <a class="botao-footer"
-        href="https://wa.me/5511988623592"
-        target="_blank">
+<div class="botao-carrossel">
 
-        Falar no WhatsApp
+    <a class="botao-footer"
+    href="https://wa.me/5511988623592"
+    target="_blank">
 
-        </a>
-    </div>
+    Falar no WhatsApp
+
+    </a>
+
+</div>
 
 </section>
     
