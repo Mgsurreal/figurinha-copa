@@ -1939,6 +1939,35 @@ function moverCarrossel(direcao){
 
 }
 </script>
+
+    <script>
+
+const track = document.getElementById("carrosselTrack");
+
+setInterval(() => {
+
+    if (
+        track.scrollLeft + track.clientWidth
+        >= track.scrollWidth - 10
+    ) {
+
+        track.scrollTo({
+            left: 0,
+            behavior: "smooth"
+        });
+
+    } else {
+
+        track.scrollBy({
+            left: 445,
+            behavior: "smooth"
+        });
+
+    }
+
+}, 3500);
+
+</script>
     
 
 </body>
