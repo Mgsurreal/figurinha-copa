@@ -1938,15 +1938,9 @@ function copiarLink(){
     
 
 <script>
-/* CARROSSEL CONTÍNUO */
+function moverCarrossel(direcao){
 
-const track = document.getElementById("carrosselTrack");
-
-let velocidade = 0.6;
-let pausado = false;
-
-/* Setas laterais */
-window.moverCarrossel = function(direcao){
+    const track = document.getElementById("carrosselTrack");
 
     if(!track) return;
 
@@ -1955,70 +1949,6 @@ window.moverCarrossel = function(direcao){
         behavior: "smooth"
     });
 
-};
-
-<script>
-/* CARROSSEL CONTÍNUO */
-
-const track = document.getElementById("carrosselTrack");
-
-let velocidade = 0.6;
-let pausado = false;
-
-function moverCarrossel(direcao){
-
-    if(!track) return;
-
-    pausado = true;
-
-    track.scrollBy({
-        left: direcao * 445,
-        behavior: "smooth"
-    });
-
-    setTimeout(function(){
-        pausado = false;
-    }, 800);
-}
-
-window.moverCarrossel = moverCarrossel;
-
-function animarCarrossel(){
-
-    if(track && !pausado){
-
-        track.scrollLeft += velocidade;
-
-        const chegouNoFinal =
-            Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth;
-
-        if(chegouNoFinal){
-            track.scrollLeft = 0;
-        }
-    }
-
-    requestAnimationFrame(animarCarrossel);
-}
-
-if(track){
-
-    animarCarrossel();
-
-    track.addEventListener("mousedown", function(){
-        pausado = true;
-    });
-
-    document.addEventListener("mouseup", function(){
-        pausado = false;
-    });
-
-    track.addEventListener("touchstart", function(){
-        pausado = true;
-    });
-
-    track.addEventListener("touchend", function(){
-        pausado = false;
-    });
 }
 </script>
 
