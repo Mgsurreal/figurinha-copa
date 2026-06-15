@@ -981,16 +981,22 @@ grid-template-columns:1fr;
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    z-index:5;
+    z-index:50;
 
     width:44px;
     height:44px;
     border-radius:50%;
     border:1px solid #30363D;
-    background:rgba(13,17,23,.85);
+    background:rgba(13,17,23,.95);
     color:white;
     font-size:34px;
     cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    pointer-events:auto;
 }
 
 .carrossel-seta:hover{
@@ -1951,17 +1957,44 @@ window.moverCarrossel = function(direcao){
 
 };
 
-/* Movimento contínuo */
+<script>
+/* CARROSSEL CONTÍNUO */
+
+const track = document.getElementById("carrosselTrack");
+
+let velocidade = 0.6;
+let pausado = false;
+
+function moverCarrossel(direcao){
+
+    if(!track) return;
+
+    pausado = true;
+
+    track.scrollBy({
+        left: direcao * 445,
+        behavior: "smooth"
+    });
+
+    setTimeout(function(){
+        pausado = false;
+    }, 800);
+}
+
+window.moverCarrossel = moverCarrossel;
+
 function animarCarrossel(){
 
     if(track && !pausado){
 
         track.scrollLeft += velocidade;
 
-        if(track.scrollLeft + track.clientWidth >= track.scrollWidth - 5){
+        const chegouNoFinal =
+            Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth;
+
+        if(chegouNoFinal){
             track.scrollLeft = 0;
         }
-
     }
 
     requestAnimationFrame(animarCarrossel);
@@ -1975,11 +2008,7 @@ if(track){
         pausado = true;
     });
 
-    track.addEventListener("mouseup", function(){
-        pausado = false;
-    });
-
-    track.addEventListener("mouseleave", function(){
+    document.addEventListener("mouseup", function(){
         pausado = false;
     });
 
@@ -1990,10 +2019,8 @@ if(track){
     track.addEventListener("touchend", function(){
         pausado = false;
     });
-
 }
 </script>
-    
 
 </body>
 </html>
