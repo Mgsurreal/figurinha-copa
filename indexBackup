@@ -58,7 +58,6 @@
     scroll-behavior:smooth;
 }
 
-
 .topo-premium{
     max-width:1400px;
     margin:20px auto 0;
