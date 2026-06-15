@@ -1969,8 +1969,12 @@ animarCarrossel();
 
 /* Mouse */
 
-track.addEventListener("mouseenter", () => {
+track.addEventListener("mousedown", () => {
     pausado = true;
+});
+
+track.addEventListener("mouseup", () => {
+    pausado = false;
 });
 
 track.addEventListener("mouseleave", () => {
