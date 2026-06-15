@@ -60,6 +60,7 @@
 
 
 .topo-premium{
+display-none;
     max-width:1400px;
     margin:20px auto 0;
     padding:18px 25px;
