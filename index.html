@@ -937,8 +937,88 @@ grid-template-columns:1fr;
 
 }
     /* social icons fecha */
-    
 
+    
+/* carrossel começo */
+.secao-carrossel{
+    padding:40px 20px 70px;
+}
+
+.carrossel-container{
+    max-width:1400px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+}
+
+.carrossel-track{
+    display:flex;
+    gap:25px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+}
+
+.carrossel-track::-webkit-scrollbar{
+    display:none;
+}
+
+.carrossel-track img{
+    min-width:420px;
+    height:280px;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid #30363D;
+    transition:.3s;
+}
+
+.carrossel-track img:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(255,215,0,.18);
+}
+
+.carrossel-seta{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:5;
+
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid #30363D;
+    background:rgba(13,17,23,.85);
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.carrossel-seta:hover{
+    background:#25D366;
+    border-color:#25D366;
+}
+
+.carrossel-seta.esquerda{
+    left:10px;
+}
+
+.carrossel-seta.direita{
+    right:10px;
+}
+
+@media(max-width:768px){
+
+    .carrossel-track img{
+        min-width:85%;
+        height:230px;
+    }
+
+    .carrossel-seta{
+        display:none;
+    }
+
+}
+    /* carrossel fim */
 
     
 </style>
@@ -1674,23 +1754,42 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 
     
-<section>
+<section class="secao-carrossel">
 
-<h2 id="todasocasioes"style="text-align:center;margin-top:60px;">
- Para todas ocasiões !
-</h2>
+    <div class="categoria-titulo">
+        <span class="categoria-tag">✨ Outras Personalizações</span>
 
-<p style="text-align:center;color:#c9d1d9;margin:10px 0 40px;">
-Artes criativas para registrar momentos especiais.
-</p>
+        <h2>Artes Para Todos os Momentos</h2>
 
-</section>
+        <p>
+            Presentes criativos, lembranças emocionantes e artes personalizadas para todas as ocasiões.
+        </p>
+    </div>
 
-    
-<section class="banner-principal">
-    <img 
-    src="assets/img/banner/banner-personalizacoes.jpg"
-    alt="Artes personalizadas para todas as idades e ocasiões">
+    <div class="carrossel-container">
+
+        <button class="carrossel-seta esquerda" onclick="moverCarrossel(-1)">‹</button>
+
+        <div class="carrossel-track" id="carrosselTrack">
+
+            <img src="assets/img/carrossel/mesversario.jpg" alt="Arte personalizada de mesversário">
+            <img src="assets/img/carrossel/super-heroi.jpg" alt="Arte personalizada de criança como super-herói">
+            <img src="assets/img/carrossel/dia-dos-pais.jpg" alt="Arte personalizada para Dia dos Pais">
+            <img src="assets/img/carrossel/dia-das-maes.jpg" alt="Arte personalizada para Dia das Mães">
+            <img src="assets/img/carrossel/natal.jpg" alt="Arte personalizada de Natal">
+            <img src="assets/img/carrossel/carnaval.jpg" alt="Arte personalizada de Carnaval">
+            <img src="assets/img/carrossel/formatura.jpg" alt="Arte personalizada de formatura">
+            <img src="assets/img/carrossel/casais.jpg" alt="Arte personalizada para casais">
+            <img src="assets/img/carrossel/viagens.jpg" alt="Arte personalizada de viagens">
+            <img src="assets/img/carrossel/pets.jpg" alt="Arte personalizada para pets">
+            <img src="assets/img/carrossel/cha-revelacao.jpg" alt="Arte personalizada para chá revelação">
+
+        </div>
+
+        <button class="carrossel-seta direita" onclick="moverCarrossel(1)">›</button>
+
+    </div>
+
 </section>
 
 
@@ -1825,6 +1924,20 @@ function copiarLink(){
 
 }
 
+</script>
+
+
+    <script>
+function moverCarrossel(direcao){
+
+    const track = document.getElementById("carrosselTrack");
+
+    track.scrollBy({
+        left: direcao * 450,
+        behavior: "smooth"
+    });
+
+}
 </script>
     
 
