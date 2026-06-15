@@ -1926,11 +1926,17 @@ function copiarLink(){
 
 </script>
 
+    
 
-    <script>
+<script>
+/* CARROSSEL CONTÍNUO */
+
+const track = document.getElementById("carrosselTrack");
+
+let velocidade = 0.6;
+let pausado = false;
+
 function moverCarrossel(direcao){
-
-    const track = document.getElementById("carrosselTrack");
 
     track.scrollBy({
         left: direcao * 450,
@@ -1938,26 +1944,18 @@ function moverCarrossel(direcao){
     });
 
 }
-</script>
-
-    <script>
-
-const track = document.getElementById("carrosselTrack");
-
-let velocidade = 2;
-let pausado = false;
 
 function animarCarrossel(){
 
-    if(!pausado){
+    if(!pausado && track){
 
         track.scrollLeft += velocidade;
 
-        if(
-            track.scrollLeft + track.clientWidth
-            >= track.scrollWidth
-        ){
-            track.scrollLeft = 0;
+        if(track.scrollLeft >= track.scrollWidth - track.clientWidth - 2){
+            track.scrollTo({
+                left: 0,
+                behavior: "smooth"
+            });
         }
 
     }
@@ -1965,32 +1963,29 @@ function animarCarrossel(){
     requestAnimationFrame(animarCarrossel);
 }
 
-animarCarrossel();
+if(track){
+    animarCarrossel();
 
-/* Mouse */
+    track.addEventListener("mousedown", function(){
+        pausado = true;
+    });
 
-track.addEventListener("mousedown", () => {
-    pausado = true;
-});
+    track.addEventListener("mouseup", function(){
+        pausado = false;
+    });
 
-track.addEventListener("mouseup", () => {
-    pausado = false;
-});
+    track.addEventListener("mouseleave", function(){
+        pausado = false;
+    });
 
-track.addEventListener("mouseleave", () => {
-    pausado = false;
-});
+    track.addEventListener("touchstart", function(){
+        pausado = true;
+    });
 
-/* Touch */
-
-track.addEventListener("touchstart", () => {
-    pausado = true;
-});
-
-track.addEventListener("touchend", () => {
-    pausado = false;
-});
-
+    track.addEventListener("touchend", function(){
+        pausado = false;
+    });
+}
 </script>
     
 
