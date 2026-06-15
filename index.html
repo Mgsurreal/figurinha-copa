@@ -1944,28 +1944,48 @@ function moverCarrossel(direcao){
 
 const track = document.getElementById("carrosselTrack");
 
-setInterval(() => {
+let velocidade = 0.4;
+let pausado = false;
 
-    if (
-        track.scrollLeft + track.clientWidth
-        >= track.scrollWidth - 10
-    ) {
+function animarCarrossel(){
 
-        track.scrollTo({
-            left: 0,
-            behavior: "smooth"
-        });
+    if(!pausado){
 
-    } else {
+        track.scrollLeft += velocidade;
 
-        track.scrollBy({
-            left: 445,
-            behavior: "smooth"
-        });
+        if(
+            track.scrollLeft + track.clientWidth
+            >= track.scrollWidth
+        ){
+            track.scrollLeft = 0;
+        }
 
     }
 
-}, 3500);
+    requestAnimationFrame(animarCarrossel);
+}
+
+animarCarrossel();
+
+/* Mouse */
+
+track.addEventListener("mouseenter", () => {
+    pausado = true;
+});
+
+track.addEventListener("mouseleave", () => {
+    pausado = false;
+});
+
+/* Touch */
+
+track.addEventListener("touchstart", () => {
+    pausado = true;
+});
+
+track.addEventListener("touchend", () => {
+    pausado = false;
+});
 
 </script>
     
