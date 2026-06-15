@@ -1033,6 +1033,23 @@ grid-template-columns:1fr;
     margin-top:35px;
 }
 
+
+footer .logo{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
     
 </style>
 
