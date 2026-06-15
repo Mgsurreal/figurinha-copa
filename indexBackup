@@ -4,9 +4,49 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="assets/img/favicon.png">
 
-<title>Surreal Design Studio</title>
+<title>Surreal Design Studio | Figurinhas, Cards e Artes Personalizadas</title>
+
+<meta name="description" content="Transformamos fotos em figurinhas da Copa, cards premium, restauração de fotos e artes personalizadas para todas as ocasiões.">
+
+<meta name="keywords" content="figurinha personalizada, figurinha copa, card personalizado, card premium, restauração de fotos, arte personalizada, presente personalizado">
+
+<meta name="author" content="Surreal Design Studio">
+
+<meta name="robots" content="index, follow">
+
+<meta name="theme-color" content="#0D1117">
+
+<!-- Open Graph (WhatsApp, Facebook, etc.) -->
+
+<meta property="og:title" content="Surreal Design Studio">
+
+<meta property="og:description" content="Transformamos fotos em lembranças únicas, presentes emocionantes e artes personalizadas.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://figurinha-copa.surreal-marcosrg.workers.dev">
+
+<meta property="og:image" content="https://figurinha-copa.surreal-marcosrg.workers.dev/assets/img/favicon.png">
+
+<meta property="og:image:alt" content="Surreal Design Studio">
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Surreal Design Studio">
+
+<meta name="twitter:description" content="Figurinhas da Copa, Cards Premium, restauração de fotos e artes personalizadas.">
+
+<meta name="twitter:image" content="https://figurinha-copa.surreal-marcosrg.workers.dev/assets/img/favicon.png">
+
+<!-- Favicon -->
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+
 
 <style>
     html{
@@ -671,6 +711,181 @@ grid-template-columns:1fr;
 }
 
 
+
+/* ==================================================
+   RESPONSIVIDADE CELULAR E TABLET
+================================================== */
+
+@media (max-width:768px){
+
+    /* HERO */
+
+    .hero-premium{
+        min-height:auto;
+        padding:35px 25px;
+        background-position:right center;
+    }
+
+    .hero-texto{
+        max-width:100%;
+    }
+
+    .hero-texto h1{
+        font-size:2.4rem;
+        line-height:1.1;
+    }
+
+    .hero-texto p{
+        font-size:1rem;
+    }
+
+    /* MENU */
+
+    .menu{
+        gap:10px;
+        justify-content:center;
+    }
+
+    .menu a{
+        font-size:14px;
+        padding:8px 12px;
+    }
+
+    /* LOGO */
+
+    .logo{
+        gap:8px;
+    }
+
+    .logo img{
+        width:28px;
+        height:28px;
+    }
+
+    /* CATEGORIAS */
+
+    .categoria-titulo{
+        padding:0 15px;
+    }
+
+    .categoria-titulo h2{
+        font-size:1.8rem;
+    }
+
+    .categoria-titulo p{
+        font-size:15px;
+    }
+
+    .categoria-aviso{
+        display:none;
+    }
+
+    /* CATÁLOGOS */
+
+    .catalogo{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    /* CARDS */
+
+    .card{
+        max-width:450px;
+        margin:auto;
+    }
+
+    /* FOOTER */
+
+    .footer-menu{
+        gap:12px;
+    }
+
+    .footer-menu a{
+        font-size:14px;
+    }
+
+}
+
+/* ==================================================
+   CELULARES PEQUENOS
+================================================== */
+
+@media (max-width:480px){
+
+    /* ESCONDE O TEXTO DO LOGO */
+
+    .logo span{
+        display:none;
+    }
+
+    /* HERO */
+
+    .hero-premium{
+        padding:25px 20px;
+    }
+
+    .hero-texto h1{
+        font-size:2rem;
+    }
+
+    .hero-texto p{
+        font-size:14px;
+    }
+
+    .botao-hero{
+        width:100%;
+        text-align:center;
+    }
+
+    /* MENU */
+
+    .menu{
+        gap:8px;
+    }
+
+    .menu a{
+        font-size:13px;
+        padding:8px 10px;
+    }
+
+    /* TÍTULOS */
+
+    .categoria-titulo h2{
+        font-size:1.6rem;
+    }
+
+}
+
+ /* sem menu acima */
+
+@media (max-width:768px){
+
+    header{
+        display:none;
+    }
+
+    .hero-premium{
+        margin-top:20px;
+    }
+
+}
+
+    @media (max-width:768px){
+
+    header,
+    .topo-premium{
+        display:none;
+    }
+
+    .hero-premium{
+        margin-top:20px;
+    }
+
+}
+    
+
+
+    
 </style>
 
 
