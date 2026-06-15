@@ -1939,26 +1939,27 @@ const track = document.getElementById("carrosselTrack");
 let velocidade = 0.6;
 let pausado = false;
 
-function moverCarrossel(direcao){
+/* Setas laterais */
+window.moverCarrossel = function(direcao){
+
+    if(!track) return;
 
     track.scrollBy({
         left: direcao * 450,
         behavior: "smooth"
     });
 
-}
+};
 
+/* Movimento contínuo */
 function animarCarrossel(){
 
-    if(!pausado && track){
+    if(track && !pausado){
 
         track.scrollLeft += velocidade;
 
-        if(track.scrollLeft >= track.scrollWidth - track.clientWidth - 2){
-            track.scrollTo({
-                left: 0,
-                behavior: "smooth"
-            });
+        if(track.scrollLeft + track.clientWidth >= track.scrollWidth - 5){
+            track.scrollLeft = 0;
         }
 
     }
@@ -1967,6 +1968,7 @@ function animarCarrossel(){
 }
 
 if(track){
+
     animarCarrossel();
 
     track.addEventListener("mousedown", function(){
@@ -1988,6 +1990,7 @@ if(track){
     track.addEventListener("touchend", function(){
         pausado = false;
     });
+
 }
 </script>
     
