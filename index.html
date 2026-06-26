@@ -1054,6 +1054,108 @@ footer .logo{
 
 }
 
+
+/* Galeria */
+
+.secao-galeria{
+    padding:50px 20px 70px;
+}
+
+.galeria-grid{
+    max-width:1400px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:18px;
+}
+
+.galeria-item{
+    overflow:hidden;
+    border-radius:16px;
+    border:1px solid #30363D;
+    background:#161B22;
+    cursor:pointer;
+}
+
+.galeria-item img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+
+    transition:.4s ease;
+    filter:brightness(.85);
+}
+
+.galeria-item:hover img{
+    transform:scale(1.08);
+    filter:brightness(1.08);
+}
+
+.galeria-item:hover{
+    box-shadow:0 0 25px rgba(255,215,0,.18);
+}
+/* Responsivo */
+@media(max-width:1100px){
+
+    .galeria-grid{
+        grid-template-columns:repeat(3, 1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .galeria-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:12px;
+    }
+
+    .galeria-item img{
+        height:180px;
+    }
+
+}
+/* Galeria */
+
+
+.hero-botoes{
+    display:flex;
+    gap:16px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.botao-parceiro{
+    background:#25D366;
+    color:white;
+    padding:12px 20px;
+    border-radius:999px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.botao-parceiro:hover{
+    background:#1ebe5d;
+}
+
+@media(max-width:768px){
+
+    .hero-botoes{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-botoes a{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+    }
+
+}
+
     
 </style>
 
@@ -1101,9 +1203,18 @@ footer .logo{
             Figurinhas da Copa, cards colecionáveis e artes personalizadas criadas para emocionar.
         </p>
 
-        <a href="#copa" class="botao-hero">
-            Conheça os produtos
-        </a>
+        <div class="hero-botoes">
+
+            <a href="#copa" class="botao-hero">
+                Conheça os produtos
+            </a>
+
+            <a href="revendedor.html" class="botao-parceiro">
+                💰 Ganhe dinheiro vendendo
+            </a>
+
+        </div>
+
     </div>
 
 </section>
@@ -1832,7 +1943,56 @@ alt="Figurinha personalizada da Copa do Mundo">
 
 </section>
     
-<!-- carrossel -->
+<!-- carrossel fim-->
+
+
+<!-- galeria -->
+<section class="secao-galeria">
+
+    <div class="categoria-titulo">
+
+        <span class="categoria-tag">
+            🖼️ Galeria Surreal Design
+        </span>
+
+        <h2>Alguns Trabalhos Personalizados</h2>
+
+        <p>
+            Uma pequena amostra de artes criadas para clientes para transformar fotos em lembranças especiais.
+        </p>
+
+    </div>
+
+    <div class="galeria-grid">
+
+        <div class="galeria-item">
+            <img src="assets/img/galeria/menina-com-gato.png" alt="Trabalho personalizado Surreal Design Studio">
+        </div>
+
+        <div class="galeria-item">
+            <img src="assets/img/galeria/copa-extra-menino.png" alt="Trabalho personalizado Surreal Design Studio">
+        </div>
+
+        <div class="galeria-item">
+            <img src="assets/img/galeria/campeao-primeiro-gol.jpeg" alt="Trabalho personalizado Surreal Design Studio">
+        </div>
+
+        <div class="galeria-item">
+            <img src="assets/img/galeria/trabalho-04.jpg" alt="Trabalho personalizado Surreal Design Studio">
+        </div>
+
+        <div class="galeria-item">
+            <img src="assets/img/galeria/trabalho-05.jpg" alt="Trabalho personalizado Surreal Design Studio">
+        </div>
+
+        <div class="galeria-item">
+            <img src="assets/img/galeria/trabalho-06.jpg" alt="Trabalho personalizado Surreal Design Studio">
+        </div>
+
+    </div>
+
+</section>
+<!-- galeria fim-->
 
     
 
@@ -1849,15 +2009,12 @@ alt="Figurinha personalizada da Copa do Mundo">
 
         <p><strong>Figurinhas da Copa</strong></p>
         <p>1 Arte: R$ 5,00</p>
-        <p>2 Artes: R$ 10,00</p>
-        <p>3 Artes: R$ 15,00</p>
+
 
         <br>
 
         <p><strong>Cards Premium</strong></p>
-        <p>1 Arte: R$ 11,90</p>
-        <p>2 Artes: R$ 17,90</p>
-        <p>3 Artes: R$ 22,90</p>
+        <p>3 Artes: R$ 8,00</p>
 
         <br>
 
@@ -1893,7 +2050,7 @@ alt="Figurinha personalizada da Copa do Mundo">
 </div>
 
 
-    <!--social icons-->
+    <!--social icons
 <div class="rodape-social">
 
     <p>
@@ -1921,7 +2078,7 @@ alt="Figurinha personalizada da Copa do Mundo">
     </div>
 
 </div>
-    <!--social Icons-->
+    -->
 
 <a href="#" class="logo">
 

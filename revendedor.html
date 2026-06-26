@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Venda com a Surreal | Surreal Design Studio</title>
+
+<meta name="description" content="Venda artes personalizadas da Surreal Design Studio e ganhe dinheiro divulgando figurinhas, cards, restauração de fotos e artes digitais.">
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0D1117;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.topo{
+    max-width:1200px;
+    margin:20px auto 0;
+    padding:18px 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+
+    border:1px solid #30363D;
+    border-radius:18px;
+    background:rgba(8,11,16,.85);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#FFD700;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.logo img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+}
+
+.voltar{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border:1px solid #30363D;
+    padding:10px 16px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.voltar:hover{
+    background:#25D366;
+    border-color:#25D366;
+}
+
+.hero-revendedor{
+    max-width:1200px;
+    margin:30px auto 60px;
+    padding:70px 40px;
+
+    border-radius:24px;
+    border:1px solid #30363D;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
+    ),
+    url("assets/img/banner/hero-premium.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero-revendedor h1{
+    font-size:3.2rem;
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero-revendedor h1 span{
+    color:#FFD700;
+}
+
+.hero-revendedor p{
+    max-width:650px;
+    color:#c9d1d9;
+    font-size:1.2rem;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.botao-principal{
+    display:inline-block;
+
+    background:#25D366;
+    color:white;
+
+    padding:14px 24px;
+    border-radius:999px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.botao-principal:hover{
+    background:#1ebe5d;
+    transform:translateY(-3px);
+}
+
+.conteudo{
+    max-width:1200px;
+    margin:0 auto 70px;
+    padding:0 20px;
+}
+
+.bloco{
+    background:#161B22;
+    border:1px solid #30363D;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:25px;
+}
+
+.bloco h2{
+    color:#FFD700;
+    margin-bottom:15px;
+    font-size:1.8rem;
+}
+
+.bloco p{
+    color:#c9d1d9;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.card-info{
+    background:#0D1117;
+    border:1px solid #30363D;
+    border-radius:15px;
+    padding:22px;
+}
+
+.card-info h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+.card-info p{
+    color:#c9d1d9;
+    font-size:15px;
+}
+
+.lista{
+    list-style:none;
+    margin-top:15px;
+}
+
+.lista li{
+    color:#c9d1d9;
+    margin-bottom:12px;
+    line-height:1.5;
+}
+
+.cta-final{
+    text-align:center;
+    background:#080B10;
+    border:1px solid #30363D;
+    border-radius:22px;
+    padding:45px 25px;
+    margin-top:40px;
+}
+
+.cta-final h2{
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+.cta-final p{
+    color:#c9d1d9;
+    max-width:700px;
+    margin:0 auto 25px;
+    line-height:1.6;
+}
+
+footer{
+    text-align:center;
+    color:#8b949e;
+    padding:30px 20px;
+}
+
+@media(max-width:900px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .topo{
+        margin:15px 15px 0;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-revendedor{
+        margin:20px 15px 50px;
+        padding:45px 25px;
+    }
+
+    .hero-revendedor h1{
+        font-size:2.2rem;
+    }
+
+    .hero-revendedor p{
+        font-size:1rem;
+    }
+
+    .botao-principal{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="topo">
+
+    <a href="index.html" class="logo">
+        <img src="assets/img/favicon.png" alt="Surreal Design Studio">
+        <span>Surreal Design Studio</span>
+    </a>
+
+    <a href="index.html" class="voltar">
+        ← Voltar ao site
+    </a>
+
+</header>
+
+<section class="hero-revendedor">
+
+    <h1>
+        Ganhe dinheiro<br>
+        <span>vendendo artes personalizadas</span>
+    </h1>
+
+    <p>
+        Você divulga os trabalhos da Surreal Design Studio, conversa com seus clientes e envia os pedidos para produção. Nós criamos a arte, você entrega ao cliente e fica com sua parte.
+    </p>
+
+    <a class="botao-principal"
+    href="https://wa.me/5511988623592?text=Olá! Tenho interesse em vender as artes da Surreal Design Studio."
+    target="_blank">
+        Quero vender com a Surreal
+    </a>
+
+</section>
+
+<main class="conteudo">
+
+    <section class="bloco">
+
+        <h2>Como funciona?</h2>
+
+        <p>
+            O parceiro divulga os modelos da Surreal do jeito que quiser: WhatsApp, Instagram, grupos de escola, amigos, familiares ou redes sociais.
+        </p>
+
+        <p>
+            Quando conseguir um cliente, o parceiro conversa com a pessoa, coleta a foto e as informações necessárias, envia tudo para a Surreal e acompanha o pedido até a entrega final.
+        </p>
+
+        <ul class="lista">
+            <li>✅ Você divulga nossos modelos.</li>
+            <li>✅ Você conversa com o cliente.</li>
+            <li>✅ Você coleta foto e informações.</li>
+            <li>✅ Você envia o pedido para produção.</li>
+            <li>✅ A Surreal cria a arte personalizada.</li>
+            <li>✅ Você entrega a arte ao cliente.</li>
+            <li>✅ Você recebe sua parte por venda realizada.</li>
+        </ul>
+
+    </section>
+
+    <section class="bloco">
+
+        <h2>O que você pode vender?</h2>
+
+        <div class="grid">
+
+            <div class="card-info">
+                <h3>⚽ Figurinhas da Copa</h3>
+                <p>Artes personalizadas estilo figurinha para crianças, adultos, famílias e pets.</p>
+            </div>
+
+            <div class="card-info">
+                <h3>🏆 Cards Premium</h3>
+                <p>Cards personalizados com visual profissional e acabamento digital especial.</p>
+            </div>
+
+            <div class="card-info">
+                <h3>🖼️ Restauração de Fotos</h3>
+                <p>Recuperação de fotos antigas, danificadas ou com baixa qualidade.</p>
+            </div>
+
+            <div class="card-info">
+                <h3>🎂 Mesversário</h3>
+                <p>Artes criativas para registrar fases especiais do bebê.</p>
+            </div>
+
+            <div class="card-info">
+                <h3>🐶 Pets</h3>
+                <p>Artes personalizadas para animais de estimação e lembranças especiais.</p>
+            </div>
+
+            <div class="card-info">
+                <h3>🎁 Artes Personalizadas</h3>
+                <p>Criações para Dia das Mães, Dia dos Pais, Natal, casais, formaturas e outras ocasiões.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="bloco">
+
+        <h2>Como funciona o pagamento?</h2>
+
+        <p>
+            O cliente realiza o pagamento pela chave Pix informada pela Surreal. O comprovante é enviado ao parceiro, que encaminha para confirmação.
+        </p>
+
+        <p>
+            Após a confirmação do pagamento, a arte é produzida e enviada ao parceiro para entrega ao cliente final.
+        </p>
+
+        <p>
+            A comissão combinada é separada por venda confirmada.
+        </p>
+
+    </section>
+
+    <section class="bloco">
+
+        <h2>Para quem isso é ideal?</h2>
+
+        <ul class="lista">
+            <li>✅ Pessoas que participam de grupos de escola, família ou bairro.</li>
+            <li>✅ Quem tem Instagram, Facebook, TikTok ou WhatsApp ativo.</li>
+            <li>✅ Mães, pais, professores, fotógrafos, treinadores e criadores de conteúdo.</li>
+            <li>✅ Pessoas que querem ganhar dinheiro indicando e vendendo produtos digitais personalizados.</li>
+        </ul>
+
+    </section>
+
+    <section class="cta-final">
+
+        <h2>Quer começar?</h2>
+
+        <p>
+            Entre em contato pelo WhatsApp e diga que quer vender os trabalhos da Surreal Design Studio. Eu explico os valores, envio os modelos e combino como será o processo.
+        </p>
+
+        <a class="botao-principal"
+        href="https://wa.me/5511988623592?text=Olá! Quero vender os trabalhos da Surreal Design Studio."
+        target="_blank">
+            Falar no WhatsApp
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Surreal Design Studio</p>
+</footer>
+
+</body>
+</html>
