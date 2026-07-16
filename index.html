@@ -1051,12 +1051,19 @@ function copiarLink(){
     const track = document.getElementById("carrosselTrack");
     const container = track?.closest(".carrossel-container");
     const modal = document.getElementById("carrosselModal");
+    const secaoCarrossel = container?.closest(".secao-carrossel");
+    const secaoRestauracao = document.querySelector("section#restauracao");
+    const secaoCopa = document.getElementById("copa")?.closest("section");
     const imagemModal = modal?.querySelector(".carrossel-modal-imagem");
     const descricaoModal = modal?.querySelector(".carrossel-modal-descricao");
     const botaoWhatsapp = modal?.querySelector(".carrossel-modal-whatsapp");
     const botaoFechar = modal?.querySelector(".carrossel-modal-fechar");
 
     if (!track || !container || !modal) return;
+
+    if (secaoCarrossel && secaoRestauracao && secaoCopa) {
+        secaoCopa.before(secaoCarrossel, modal, secaoRestauracao);
+    }
 
     const velocidade = 35;
     const esperaAposInteracao = 4000;
