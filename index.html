@@ -1039,12 +1039,32 @@ function copiarLink(){
 
     if (!track || !container) return;
 
-    const intervalo = 3000;
+    const velocidade = 35;
     const esperaAposInteracao = 4000;
     const aceitaHover = matchMedia("(hover: hover)");
-    let temporizador;
+    const imagensOriginais = [...track.querySelectorAll("img")];
+    let quadroAnimacao;
     let retomada;
     let ponteiroAtivo = false;
+    let tempoAnterior;
+
+    imagensOriginais.forEach(imagem => {
+        const copia = imagem.cloneNode(true);
+        copia.setAttribute("aria-hidden", "true");
+        copia.alt = "";
+        track.appendChild(copia);
+    });
+
+    function pontoDeReinicio() {
+        return track.children[imagensOriginais.length]?.offsetLeft || 0;
+    }
+
+    function manterNoLoop() {
+        const reinicio = pontoDeReinicio();
+        if (reinicio && track.scrollLeft >= reinicio) {
+            track.scrollLeft -= reinicio;
+        }
+    }
 
     function distanciaDoSlide() {
         const imagem = track.querySelector("img");
@@ -1056,25 +1076,31 @@ function copiarLink(){
     }
 
     function mover(direcao) {
-        const chegouAoFim =
-            track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
-        const chegouAoInicio = track.scrollLeft <= 5;
+        const distancia = distanciaDoSlide();
+        const reinicio = pontoDeReinicio();
 
-        if (direcao > 0 && chegouAoFim) {
-            track.scrollTo({ left: 0, behavior: "smooth" });
-        } else if (direcao < 0 && chegouAoInicio) {
-            track.scrollTo({ left: track.scrollWidth, behavior: "smooth" });
-        } else {
-            track.scrollBy({
-                left: direcao * distanciaDoSlide(),
-                behavior: "smooth"
-            });
+        if (direcao < 0 && track.scrollLeft < distancia && reinicio) {
+            track.scrollLeft += reinicio;
         }
+
+        track.scrollBy({ left: direcao * distancia, behavior: "smooth" });
+    }
+
+    function animar(agora) {
+        if (tempoAnterior !== undefined) {
+            const tempoDecorrido = Math.min(agora - tempoAnterior, 50);
+            track.scrollLeft += velocidade * tempoDecorrido / 1000;
+            manterNoLoop();
+        }
+
+        tempoAnterior = agora;
+        quadroAnimacao = requestAnimationFrame(animar);
     }
 
     function parar() {
-        clearInterval(temporizador);
+        cancelAnimationFrame(quadroAnimacao);
         clearTimeout(retomada);
+        tempoAnterior = undefined;
     }
 
     function iniciar() {
@@ -1090,7 +1116,7 @@ function copiarLink(){
             matchMedia("(prefers-reduced-motion: reduce)").matches
         ) return;
 
-        temporizador = setInterval(() => mover(1), intervalo);
+        quadroAnimacao = requestAnimationFrame(animar);
     }
 
     function retomarDepois() {
