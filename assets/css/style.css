@@ -1080,8 +1080,13 @@ body.modal-aberto{
 }
 
 .carrossel-modal{
-    width:min(920px, calc(100% - 32px));
-    max-height:calc(100vh - 32px);
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:min(640px, calc(100% - 32px));
+    max-height:calc(100dvh - 32px);
+    margin:0;
     padding:0;
     overflow:auto;
     border:1px solid #30363D;
@@ -1115,7 +1120,7 @@ body.modal-aberto{
 .carrossel-modal-imagem{
     display:block;
     width:100%;
-    max-height:68vh;
+    max-height:55vh;
     object-fit:contain;
     background:#050608;
 }
@@ -1146,6 +1151,31 @@ body.modal-aberto{
 
 .carrossel-modal-whatsapp:hover{
     background:#1ebe5d;
+}
+
+@media(max-width:600px){
+    .carrossel-modal{
+        width:calc(100% - 24px);
+        max-height:calc(100dvh - 24px);
+        border-radius:16px;
+    }
+
+    .carrossel-modal-imagem{
+        max-height:48vh;
+    }
+
+    .carrossel-modal-conteudo{
+        padding:16px;
+    }
+
+    .carrossel-modal-conteudo h3{
+        font-size:1.15rem;
+    }
+
+    .carrossel-modal-descricao{
+        margin-bottom:14px;
+        font-size:14px;
+    }
 }
 
 
