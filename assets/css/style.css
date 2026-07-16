@@ -969,6 +969,103 @@ grid-template-columns:1fr;
     }
 
 }
+
+/* Topo compacto e responsivo */
+.topo-premium{
+    position:sticky;
+    top:8px;
+    z-index:100;
+}
+
+.acoes-topo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0;
+}
+
+.revendedor-topo{
+    padding:8px 12px;
+    border-radius:999px;
+    background:#25D366;
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+    line-height:1.2;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+.acoes-topo .whatsapp-topo{
+    padding:8px 12px;
+    font-size:12px;
+    white-space:nowrap;
+}
+
+@media(max-width:768px){
+    header.topo-premium{
+        display:flex;
+        width:calc(100% - 20px);
+        margin:10px 10px 0;
+        padding:10px 12px;
+        gap:10px;
+        flex-wrap:wrap;
+        border-radius:14px;
+    }
+
+    .topo-premium .logo{
+        flex:1 1 auto;
+        min-width:0;
+        font-size:15px;
+    }
+
+    .topo-premium .menu-premium{
+        order:3;
+        width:100%;
+        padding:4px 0 2px;
+        display:flex;
+        flex-wrap:nowrap;
+        gap:8px;
+        overflow-x:auto;
+        scrollbar-width:none;
+    }
+
+    .topo-premium .menu-premium::-webkit-scrollbar{
+        display:none;
+    }
+
+    .topo-premium .menu-premium a{
+        flex:0 0 auto;
+        padding:7px 10px;
+        border:1px solid #30363D;
+        border-radius:999px;
+        font-size:12px;
+    }
+
+    .acoes-topo{
+        margin-left:auto;
+    }
+
+    .revendedor-topo,
+    .acoes-topo .whatsapp-topo{
+        padding:7px 9px;
+        font-size:11px;
+    }
+
+    .secao-carrossel{
+        padding-top:28px;
+    }
+}
+
+@media(max-width:420px){
+    .acoes-topo .whatsapp-topo{
+        display:none;
+    }
+
+    .revendedor-topo{
+        font-size:10px;
+    }
+}
     /* carrossel fim */
 
 
