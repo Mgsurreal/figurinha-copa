@@ -898,6 +898,8 @@ grid-template-columns:1fr;
     gap:25px;
     overflow-x:auto;
     scroll-behavior:smooth;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-inline:contain;
     scrollbar-width:none;
 }
 
@@ -909,6 +911,9 @@ grid-template-columns:1fr;
     min-width:420px;
     height:280px;
     object-fit:cover;
+    scroll-snap-align:start;
+    user-select:none;
+    -webkit-user-drag:none;
     border-radius:18px;
     border:1px solid #30363D;
     transition:.3s;

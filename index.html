@@ -805,7 +805,7 @@ alt="Figurinha personalizada da Copa do Mundo">
     
     <div class="carrossel-container">
 
-        <button class="carrossel-seta esquerda" onclick="moverCarrossel(-1)">‹</button>
+        <button type="button" class="carrossel-seta esquerda" onclick="moverCarrossel(-1)" aria-label="Imagem anterior">‹</button>
 
         <div class="carrossel-track" id="carrosselTrack">
 
@@ -823,7 +823,7 @@ alt="Figurinha personalizada da Copa do Mundo">
 
         </div>
 
-        <button class="carrossel-seta direita" onclick="moverCarrossel(1)">›</button>
+        <button type="button" class="carrossel-seta direita" onclick="moverCarrossel(1)" aria-label="Próxima imagem">›</button>
 
     </div>
 
@@ -1033,18 +1033,97 @@ function copiarLink(){
     
 
 <script>
-function moverCarrossel(direcao){
-
+(() => {
     const track = document.getElementById("carrosselTrack");
+    const container = track?.closest(".carrossel-container");
 
-    if(!track) return;
+    if (!track || !container) return;
 
-    track.scrollBy({
-        left: direcao * 450,
-        behavior: "smooth"
+    const intervalo = 3000;
+    const esperaAposInteracao = 4000;
+    const aceitaHover = matchMedia("(hover: hover)");
+    let temporizador;
+    let retomada;
+    let ponteiroAtivo = false;
+
+    function distanciaDoSlide() {
+        const imagem = track.querySelector("img");
+        if (!imagem) return track.clientWidth;
+
+        const estilos = getComputedStyle(track);
+        const gap = parseFloat(estilos.columnGap || estilos.gap) || 0;
+        return imagem.getBoundingClientRect().width + gap;
+    }
+
+    function mover(direcao) {
+        const chegouAoFim =
+            track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+        const chegouAoInicio = track.scrollLeft <= 5;
+
+        if (direcao > 0 && chegouAoFim) {
+            track.scrollTo({ left: 0, behavior: "smooth" });
+        } else if (direcao < 0 && chegouAoInicio) {
+            track.scrollTo({ left: track.scrollWidth, behavior: "smooth" });
+        } else {
+            track.scrollBy({
+                left: direcao * distanciaDoSlide(),
+                behavior: "smooth"
+            });
+        }
+    }
+
+    function parar() {
+        clearInterval(temporizador);
+        clearTimeout(retomada);
+    }
+
+    function iniciar() {
+        parar();
+        const mouseSobreCarrossel = aceitaHover.matches && container.matches(":hover");
+        const focoNoCarrossel = container.contains(document.activeElement);
+
+        if (
+            document.hidden ||
+            ponteiroAtivo ||
+            mouseSobreCarrossel ||
+            focoNoCarrossel ||
+            matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) return;
+
+        temporizador = setInterval(() => mover(1), intervalo);
+    }
+
+    function retomarDepois() {
+        parar();
+        retomada = setTimeout(iniciar, esperaAposInteracao);
+    }
+
+    window.moverCarrossel = direcao => {
+        mover(direcao);
+        retomarDepois();
+    };
+
+    container.addEventListener("mouseenter", parar);
+    container.addEventListener("mouseleave", iniciar);
+    container.addEventListener("pointerdown", () => {
+        ponteiroAtivo = true;
+        parar();
     });
+    container.addEventListener("pointerup", () => {
+        ponteiroAtivo = false;
+        retomarDepois();
+    });
+    container.addEventListener("pointercancel", () => {
+        ponteiroAtivo = false;
+        retomarDepois();
+    });
+    container.addEventListener("focusin", parar);
+    container.addEventListener("focusout", retomarDepois);
+    track.addEventListener("wheel", retomarDepois, { passive: true });
+    document.addEventListener("visibilitychange", iniciar);
 
-}
+    iniciar();
+})();
 </script>
 
 </body>
