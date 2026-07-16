@@ -840,6 +840,20 @@ alt="Figurinha personalizada da Copa do Mundo">
 </div>
 
 </section>
+
+<dialog class="carrossel-modal" id="carrosselModal" aria-labelledby="carrosselModalTitulo">
+    <button type="button" class="carrossel-modal-fechar" aria-label="Fechar imagem ampliada">×</button>
+
+    <img class="carrossel-modal-imagem" src="" alt="">
+
+    <div class="carrossel-modal-conteudo">
+        <h3 id="carrosselModalTitulo">Gostou deste modelo?</h3>
+        <p class="carrossel-modal-descricao"></p>
+        <a class="carrossel-modal-whatsapp" href="#" target="_blank" rel="noopener">
+            Pedir pelo WhatsApp
+        </a>
+    </div>
+</dialog>
     
 <!-- carrossel fim
 
@@ -1036,8 +1050,13 @@ function copiarLink(){
 (() => {
     const track = document.getElementById("carrosselTrack");
     const container = track?.closest(".carrossel-container");
+    const modal = document.getElementById("carrosselModal");
+    const imagemModal = modal?.querySelector(".carrossel-modal-imagem");
+    const descricaoModal = modal?.querySelector(".carrossel-modal-descricao");
+    const botaoWhatsapp = modal?.querySelector(".carrossel-modal-whatsapp");
+    const botaoFechar = modal?.querySelector(".carrossel-modal-fechar");
 
-    if (!track || !container) return;
+    if (!track || !container || !modal) return;
 
     const velocidade = 35;
     const esperaAposInteracao = 4000;
@@ -1047,13 +1066,44 @@ function copiarLink(){
     let retomada;
     let ponteiroAtivo = false;
     let tempoAnterior;
+    let inicioInteracao;
+    let ignorarProximoClique = false;
+
+    imagensOriginais.forEach(imagem => {
+        imagem.setAttribute("role", "button");
+        imagem.tabIndex = 0;
+        imagem.setAttribute("aria-label", `Ampliar: ${imagem.alt}`);
+    });
 
     imagensOriginais.forEach(imagem => {
         const copia = imagem.cloneNode(true);
+        copia.dataset.descricao = imagem.alt;
         copia.setAttribute("aria-hidden", "true");
         copia.alt = "";
+        copia.removeAttribute("role");
+        copia.removeAttribute("aria-label");
+        copia.removeAttribute("tabindex");
         track.appendChild(copia);
     });
+
+    function abrirModelo(imagem) {
+        const descricao = imagem.dataset.descricao || imagem.alt;
+        if (!descricao) return;
+
+        parar();
+        imagemModal.src = imagem.src;
+        imagemModal.alt = descricao;
+        descricaoModal.textContent = descricao;
+        botaoWhatsapp.href = `https://wa.me/5511988623592?text=${encodeURIComponent(
+            `Olá! Gostei deste modelo: ${descricao}. Gostaria de fazer uma arte personalizada.`
+        )}`;
+        document.body.classList.add("modal-aberto");
+        modal.showModal();
+    }
+
+    function fecharModelo() {
+        modal.close();
+    }
 
     function pontoDeReinicio() {
         return track.children[imagensOriginais.length]?.offsetLeft || 0;
@@ -1131,21 +1181,56 @@ function copiarLink(){
 
     container.addEventListener("mouseenter", parar);
     container.addEventListener("mouseleave", iniciar);
-    container.addEventListener("pointerdown", () => {
+    container.addEventListener("pointerdown", evento => {
         ponteiroAtivo = true;
+        inicioInteracao = { x: evento.clientX, y: evento.clientY };
+        ignorarProximoClique = false;
         parar();
     });
-    container.addEventListener("pointerup", () => {
+    container.addEventListener("pointerup", evento => {
+        if (inicioInteracao) {
+            const distancia = Math.hypot(
+                evento.clientX - inicioInteracao.x,
+                evento.clientY - inicioInteracao.y
+            );
+            ignorarProximoClique = distancia > 8;
+        }
         ponteiroAtivo = false;
+        inicioInteracao = undefined;
         retomarDepois();
     });
     container.addEventListener("pointercancel", () => {
         ponteiroAtivo = false;
+        inicioInteracao = undefined;
+        ignorarProximoClique = true;
         retomarDepois();
     });
     container.addEventListener("focusin", parar);
     container.addEventListener("focusout", retomarDepois);
     track.addEventListener("wheel", retomarDepois, { passive: true });
+    track.addEventListener("click", evento => {
+        if (ignorarProximoClique) {
+            ignorarProximoClique = false;
+            return;
+        }
+        const imagem = evento.target.closest("img");
+        if (imagem) abrirModelo(imagem);
+    });
+    track.addEventListener("keydown", evento => {
+        if ((evento.key === "Enter" || evento.key === " ") && evento.target.matches("img")) {
+            evento.preventDefault();
+            abrirModelo(evento.target);
+        }
+    });
+    botaoFechar.addEventListener("click", fecharModelo);
+    modal.addEventListener("click", evento => {
+        if (evento.target === modal) fecharModelo();
+    });
+    modal.addEventListener("close", () => {
+        document.body.classList.remove("modal-aberto");
+        imagemModal.src = "";
+        retomarDepois();
+    });
     document.addEventListener("visibilitychange", iniciar);
 
     iniciar();

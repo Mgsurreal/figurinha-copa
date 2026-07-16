@@ -911,6 +911,7 @@ grid-template-columns:1fr;
     object-fit:cover;
     user-select:none;
     -webkit-user-drag:none;
+    cursor:zoom-in;
     border-radius:18px;
     border:1px solid #30363D;
     transition:.3s;
@@ -975,6 +976,79 @@ grid-template-columns:1fr;
     display:flex;
     justify-content:center;
     margin-top:35px;
+}
+
+body.modal-aberto{
+    overflow:hidden;
+}
+
+.carrossel-modal{
+    width:min(920px, calc(100% - 32px));
+    max-height:calc(100vh - 32px);
+    padding:0;
+    overflow:auto;
+    border:1px solid #30363D;
+    border-radius:20px;
+    background:#0D1117;
+    color:white;
+    box-shadow:0 24px 80px rgba(0,0,0,.7);
+}
+
+.carrossel-modal::backdrop{
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(5px);
+}
+
+.carrossel-modal-fechar{
+    position:absolute;
+    top:12px;
+    right:12px;
+    z-index:2;
+    width:44px;
+    height:44px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50%;
+    background:rgba(13,17,23,.85);
+    color:white;
+    font-size:30px;
+    line-height:1;
+    cursor:pointer;
+}
+
+.carrossel-modal-imagem{
+    display:block;
+    width:100%;
+    max-height:68vh;
+    object-fit:contain;
+    background:#050608;
+}
+
+.carrossel-modal-conteudo{
+    padding:22px;
+    text-align:center;
+}
+
+.carrossel-modal-conteudo h3{
+    margin:0 0 8px;
+}
+
+.carrossel-modal-descricao{
+    margin:0 0 18px;
+    color:#c9d1d9;
+}
+
+.carrossel-modal-whatsapp{
+    display:inline-block;
+    padding:13px 24px;
+    border-radius:999px;
+    background:#25D366;
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.carrossel-modal-whatsapp:hover{
+    background:#1ebe5d;
 }
 
 
